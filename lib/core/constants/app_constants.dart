@@ -5,8 +5,8 @@ class AppConstants {
   static const String appVersion = '1.0.0';
 
   // API
-  static const String _mobileBaseUrl = 'http://192.168.110.230:8083';
-  static const String _webBaseUrl = 'http://localhost:8083';
+  static const String _mobileBaseUrl = 'http://192.168.110.230:8080';
+  static const String _webBaseUrl = 'http://localhost:8080';
   static String get baseUrl => kIsWeb ? _webBaseUrl : _mobileBaseUrl;
   static const String apiVersion = '/v1';
   static const int connectTimeout = 30;
