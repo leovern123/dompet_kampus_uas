@@ -150,6 +150,7 @@ class _PinPageState extends State<PinPage> {
     final toEmail = recipient['email'] as String?
         ?? recipient['sub'] as String?
         ?? '';
+    debugPrint('[Payment] submit → toEmail=$toEmail amount=${flow['amount']} otpType=$_otpType otpCode=$code');
     context.read<PaymentBloc>().add(PaymentTransferRequested(
       amount: (flow['amount'] as num).toDouble(),
       toEmail: toEmail,
