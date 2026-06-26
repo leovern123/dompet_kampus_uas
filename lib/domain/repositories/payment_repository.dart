@@ -4,6 +4,7 @@ abstract class PaymentRepository {
   Future<({double balance, double amount})> topup(double amount);
   Future<TransferResultEntity> transfer({
     required double amount,
+    required String toEmail,
     required String description,
     required String otpCode,
     required String otpType,
