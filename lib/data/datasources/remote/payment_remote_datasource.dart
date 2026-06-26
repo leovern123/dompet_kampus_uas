@@ -6,6 +6,7 @@ abstract class PaymentRemoteDatasource {
   Future<({double balance, double amount})> topup(double amount);
   Future<TransferResultEntity> transfer({
     required double amount,
+    required String toEmail,
     required String description,
     required String otpCode,
     required String otpType,
@@ -29,11 +30,13 @@ class PaymentRemoteDatasourceImpl implements PaymentRemoteDatasource {
   @override
   Future<TransferResultEntity> transfer({
     required double amount,
+    required String toEmail,
     required String description,
     required String otpCode,
     required String otpType,
   }) async {
     final response = await _client.post(ApiEndpoints.transfer, data: {
+      'to_email': toEmail,
       'amount': amount,
       'description': description,
       'otp_code': otpCode,
