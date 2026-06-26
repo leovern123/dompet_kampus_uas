@@ -22,6 +22,7 @@ class PaymentRepositoryImpl implements PaymentRepository {
   @override
   Future<TransferResultEntity> transfer({
     required double amount,
+    required String toEmail,
     required String description,
     required String otpCode,
     required String otpType,
@@ -29,6 +30,7 @@ class PaymentRepositoryImpl implements PaymentRepository {
     try {
       return await _remote.transfer(
         amount: amount,
+        toEmail: toEmail,
         description: description,
         otpCode: otpCode,
         otpType: otpType,
