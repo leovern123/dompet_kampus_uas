@@ -7,11 +7,11 @@ import '../../widgets/app_top_bar.dart';
 import '../../widgets/feature_icon.dart';
 
 const _contacts = [
-  {'id': '1', 'name': 'Budi Santoso', 'sub': '0812-3456-7890', 'fav': true},
-  {'id': '2', 'name': 'Citra Dewi', 'sub': '0856-1122-3344', 'fav': true},
-  {'id': '3', 'name': 'Eko Prasetyo', 'sub': '0813-9988-7766', 'fav': false},
-  {'id': '4', 'name': 'Fitri Handayani', 'sub': '0821-4455-6677', 'fav': false},
-  {'id': '5', 'name': 'Gilang Ramadhan', 'sub': '0857-3344-1122', 'fav': false},
+  {'id': '1', 'name': 'Budi Santoso', 'sub': 'budi@example.com', 'fav': true},
+  {'id': '2', 'name': 'Citra Dewi', 'sub': 'citra@example.com', 'fav': true},
+  {'id': '3', 'name': 'Eko Prasetyo', 'sub': 'eko@example.com', 'fav': false},
+  {'id': '4', 'name': 'Fitri Handayani', 'sub': 'fitri@example.com', 'fav': false},
+  {'id': '5', 'name': 'Gilang Ramadhan', 'sub': 'gilang@example.com', 'fav': false},
 ];
 
 const _banks = [
@@ -74,7 +74,7 @@ class _TransferPageState extends State<TransferPage> {
                 AppField(
                   value: _q,
                   onChanged: (v) => setState(() => _q = v),
-                  placeholder: _tab == 'dkg' ? 'Cari nama / nomor HP' : 'Cari bank',
+                  placeholder: _tab == 'dkg' ? 'Cari nama atau email DKG' : 'Cari bank',
                   prefixIcon: const Icon(Icons.search_rounded, size: 20),
                 ),
                 const SizedBox(height: 14),
@@ -95,7 +95,8 @@ class _TransferPageState extends State<TransferPage> {
 
   Widget _buildContacts() {
     final filtered = _contacts.where((c) =>
-        (c['name'] as String).toLowerCase().contains(_q.toLowerCase())).toList();
+        (c['name'] as String).toLowerCase().contains(_q.toLowerCase()) ||
+        (c['sub'] as String).toLowerCase().contains(_q.toLowerCase())).toList();
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
