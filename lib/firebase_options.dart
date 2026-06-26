@@ -51,10 +51,11 @@ class DefaultFirebaseOptions {
   static const FirebaseOptions web = FirebaseOptions(
     apiKey: 'AIzaSyC825h143G8V9VsE9G4Jec3DDBTUCBMzI0',
     appId: '1:130435149402:web:b02e654c0cf1d84311b263',
-    messagingSenderId: '948878883710',
-    projectId: 'fir-emoney-e9256',
-    storageBucket: 'fir-emoney-e9256.firebasestorage.app',
-    authDomain: 'fir-emoney-e9256.firebaseapp.com',
+    messagingSenderId: '130435149402',
+    projectId: 'emoneyuas',
+    storageBucket: 'emoneyuas.firebasestorage.app',
+    authDomain: 'emoneyuas.firebaseapp.com',
+    measurementId: 'G-23G8G91QPK',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
