@@ -74,8 +74,18 @@ class _TransferPageState extends State<TransferPage> {
                 AppField(
                   value: _q,
                   onChanged: (v) => setState(() => _q = v),
-                  placeholder: _tab == 'dkg' ? 'Cari nama atau email DKG' : 'Cari bank',
+                  placeholder: _tab == 'dkg' ? 'Cari nama atau masukkan email' : 'Cari bank',
+                  keyboardType: _tab == 'dkg' ? TextInputType.emailAddress : TextInputType.text,
                   prefixIcon: const Icon(Icons.search_rounded, size: 20),
+                  suffixIcon: _tab == 'dkg' && _q.contains('@')
+                      ? IconButton(
+                          icon: const Icon(Icons.send_rounded, size: 20, color: AppColors.primary),
+                          onPressed: () => context.go('/transfer/amount', extra: {
+                            'recipient': {'name': _q, 'sub': _q},
+                            'channel': 'dkg',
+                          }),
+                        )
+                      : null,
                 ),
                 const SizedBox(height: 14),
                 const Divider(height: 1, color: AppColors.line2),
@@ -95,8 +105,7 @@ class _TransferPageState extends State<TransferPage> {
 
   Widget _buildContacts() {
     final filtered = _contacts.where((c) =>
-        (c['name'] as String).toLowerCase().contains(_q.toLowerCase()) ||
-        (c['sub'] as String).toLowerCase().contains(_q.toLowerCase())).toList();
+        (c['name'] as String).toLowerCase().contains(_q.toLowerCase())).toList();
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
