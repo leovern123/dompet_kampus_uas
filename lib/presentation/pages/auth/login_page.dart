@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -30,29 +31,32 @@ class _LoginPageState extends State<LoginPage> {
     setState(() => _gLoading = true);
     try {
       debugPrint('[Auth] Google sign-in: memulai...');
-      final googleSignIn = GoogleSignIn();
-      // Keluar dari sesi Google yang ter-cache agar dialog pilih akun selalu muncul
-      await googleSignIn.signOut();
-      final googleUser = await googleSignIn.signIn();
-      if (googleUser == null) {
-        debugPrint('[Auth] Google sign-in: dibatalkan user');
-        setState(() => _gLoading = false);
-        return;
+      UserCredential userCredential;
+
+      if (kIsWeb) {
+        // Web: gunakan Firebase popup — tidak perlu daftarkan origin di GCP
+        final provider = GoogleAuthProvider();
+        userCredential = await FirebaseAuth.instance.signInWithPopup(provider);
+      } else {
+        // Mobile: gunakan google_sign_in package
+        final googleSignIn = GoogleSignIn();
+        await googleSignIn.signOut();
+        final googleUser = await googleSignIn.signIn();
+        if (googleUser == null) {
+          debugPrint('[Auth] Google sign-in: dibatalkan user');
+          setState(() => _gLoading = false);
+          return;
+        }
+        debugPrint('[Auth] Google sign-in: akun dipilih → ${googleUser.email}');
+        final googleAuth = await googleUser.authentication;
+        final credential = GoogleAuthProvider.credential(
+          accessToken: googleAuth.accessToken,
+          idToken: googleAuth.idToken,
+        );
+        userCredential = await FirebaseAuth.instance.signInWithCredential(credential);
       }
-      debugPrint('[Auth] Google sign-in: akun dipilih → ${googleUser.email}');
 
-      final googleAuth = await googleUser.authentication;
-      debugPrint(
-          '[Auth] Google auth: accessToken=${googleAuth.accessToken != null ? "OK" : "NULL"}, '
-          'idToken=${googleAuth.idToken != null ? "OK" : "NULL"}');
-
-      final credential = GoogleAuthProvider.credential(
-        accessToken: googleAuth.accessToken,
-        idToken: googleAuth.idToken,
-      );
-      final userCredential = await FirebaseAuth.instance.signInWithCredential(credential);
       debugPrint('[Auth] Firebase sign-in OK → uid=${userCredential.user?.uid}');
-
       final idToken = await userCredential.user?.getIdToken();
       debugPrint(
           '[Auth] Firebase ID token: ${idToken != null ? "OK (${idToken.length} chars)" : "NULL"}');
