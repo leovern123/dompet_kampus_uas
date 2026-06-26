@@ -12,11 +12,14 @@ class AppLogo extends StatelessWidget {
   Widget build(BuildContext context) {
     const fontFamily = 'PlusJakartaSans';
 
-    Widget icon = Image.asset(
-      'assets/images/logo-dompet.png',
-      width: size,
-      height: size,
-      fit: BoxFit.contain,
+    Widget icon = ClipRRect(
+      borderRadius: BorderRadius.circular(size * 0.2),
+      child: Image.asset(
+        'assets/logo/logo.jpeg',
+        width: size,
+        height: size,
+        fit: BoxFit.cover,
+      ),
     );
 
     if (!withText) return icon;
