@@ -146,8 +146,13 @@ class _PinPageState extends State<PinPage> {
   void _submitPayment(String code) {
     setState(() => _busy = true);
     final flow = widget.flowData;
+    final recipient = flow['recipient'] as Map<String, dynamic>? ?? {};
+    final toEmail = recipient['email'] as String?
+        ?? recipient['sub'] as String?
+        ?? '';
     context.read<PaymentBloc>().add(PaymentTransferRequested(
       amount: (flow['amount'] as num).toDouble(),
+      toEmail: toEmail,
       description: _descriptionFor(flow),
       otpCode: code,
       otpType: _otpType,
