@@ -13,12 +13,14 @@ class TransferUsecase {
   TransferUsecase(this._repository);
   Future<TransferResultEntity> call({
     required double amount,
+    required String toEmail,
     required String description,
     required String otpCode,
     required String otpType,
   }) =>
       _repository.transfer(
         amount: amount,
+        toEmail: toEmail,
         description: description,
         otpCode: otpCode,
         otpType: otpType,
