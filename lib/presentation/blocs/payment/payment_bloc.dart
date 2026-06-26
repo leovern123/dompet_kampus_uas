@@ -19,17 +19,19 @@ class PaymentTopupRequested extends PaymentEvent {
 
 class PaymentTransferRequested extends PaymentEvent {
   final double amount;
+  final String toEmail;
   final String description;
   final String otpCode;
   final String otpType;
   PaymentTransferRequested({
     required this.amount,
+    required this.toEmail,
     required this.description,
     required this.otpCode,
     required this.otpType,
   });
   @override
-  List<Object?> get props => [amount, description, otpCode, otpType];
+  List<Object?> get props => [amount, toEmail, description, otpCode, otpType];
 }
 
 class PaymentReset extends PaymentEvent {}
@@ -110,6 +112,7 @@ class PaymentBloc extends Bloc<PaymentEvent, PaymentState> {
     try {
       final result = await _transfer(
         amount: event.amount,
+        toEmail: event.toEmail,
         description: event.description,
         otpCode: event.otpCode,
         otpType: event.otpType,
