@@ -67,6 +67,10 @@ class _LoginPageState extends State<LoginPage> {
       }
     } catch (e, st) {
       debugPrint('[Auth] Google sign-in ERROR: $e\n$st');
+      if (e is FirebaseAuthException && e.code == 'popup-closed-by-user') {
+        // User menutup popup — bukan error, abaikan
+        return;
+      }
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(content: Text('Login Google gagal: $e')),
