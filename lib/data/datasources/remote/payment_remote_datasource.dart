@@ -1,3 +1,5 @@
+import 'package:flutter/foundation.dart';
+
 import '../../../core/constants/api_endpoints.dart';
 import '../../../core/network/api_client.dart';
 import '../../../domain/entities/payment_result_entity.dart';
@@ -42,13 +44,14 @@ class PaymentRemoteDatasourceImpl implements PaymentRemoteDatasource {
       'otp_code': otpCode,
       'otp_type': otpType,
     });
-    final data = response['data'] as Map<String, dynamic>;
+    final data = response['data'] as Map<String, dynamic>? ?? response;
+    debugPrint('[Datasource] transfer response data: $data');
     return TransferResultEntity(
-      transactionId: (data['transaction_id'] as num).toInt(),
-      amount: (data['amount'] as num).toDouble(),
+      transactionId: (data['transaction_id'] as num?)?.toInt() ?? 0,
+      amount: (data['amount'] as num?)?.toDouble() ?? 0,
       description: data['description'] as String? ?? '',
-      balanceBefore: (data['balance_before'] as num).toDouble(),
-      balanceAfter: (data['balance_after'] as num).toDouble(),
+      balanceBefore: (data['balance_before'] as num?)?.toDouble() ?? 0,
+      balanceAfter: (data['balance_after'] as num?)?.toDouble() ?? 0,
       createdAt: DateTime.tryParse(data['created_at'] as String? ?? '') ?? DateTime.now(),
     );
   }
