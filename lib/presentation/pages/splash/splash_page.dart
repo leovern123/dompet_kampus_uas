@@ -58,6 +58,9 @@ class _SplashPageState extends State<SplashPage> {
       );
       if (!mounted) return;
       if (authenticated) {
+        // Beri jeda agar dialog biometrik sempat dismiss sebelum navigasi
+        await Future.delayed(const Duration(milliseconds: 300));
+        if (!mounted) return;
         context.read<AuthBloc>().add(AuthCheckRequested());
       } else {
         setState(() { _showBiometric = false; _biometricLoading = false; });
