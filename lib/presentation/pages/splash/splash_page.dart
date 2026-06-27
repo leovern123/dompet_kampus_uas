@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:local_auth/local_auth.dart';
 import '../../../core/services/deeplink_service.dart';
 import '../../../core/theme/app_colors.dart';
+import '../../../data/datasources/local/secure_storage_datasource.dart';
+import '../../../injection/injection_container.dart';
 import '../../blocs/auth/auth_bloc.dart';
 import '../../widgets/app_button.dart';
 import '../../widgets/app_logo.dart';
@@ -15,10 +18,53 @@ class SplashPage extends StatefulWidget {
 }
 
 class _SplashPageState extends State<SplashPage> {
+  bool _showBiometric = false;
+  bool _biometricLoading = false;
+  final _localAuth = LocalAuthentication();
+
   @override
   void initState() {
     super.initState();
-    context.read<AuthBloc>().add(AuthCheckRequested());
+    _init();
+  }
+
+  Future<void> _init() async {
+    final storage = sl<SecureStorageDatasource>();
+    final token = await storage.getToken();
+    final biometricEnabled = await storage.getBiometricEnabled();
+
+    if (!mounted) return;
+
+    if (token != null && biometricEnabled) {
+      // Ada sesi tersimpan + biometrik aktif → tampilkan prompt biometrik
+      setState(() => _showBiometric = true);
+      _triggerBiometric();
+    } else if (token != null) {
+      // Ada sesi tersimpan tapi biometrik tidak aktif → auto login
+      context.read<AuthBloc>().add(AuthCheckRequested());
+    }
+    // Tidak ada token → tampilkan welcome screen (tidak perlu action)
+  }
+
+  Future<void> _triggerBiometric() async {
+    setState(() => _biometricLoading = true);
+    try {
+      final authenticated = await _localAuth.authenticate(
+        localizedReason: 'Masuk ke Dompet Kampus Global',
+        options: const AuthenticationOptions(
+          biometricOnly: false,
+          stickyAuth: true,
+        ),
+      );
+      if (!mounted) return;
+      if (authenticated) {
+        context.read<AuthBloc>().add(AuthCheckRequested());
+      } else {
+        setState(() { _showBiometric = false; _biometricLoading = false; });
+      }
+    } catch (_) {
+      if (mounted) setState(() { _showBiometric = false; _biometricLoading = false; });
+    }
   }
 
   @override
@@ -26,8 +72,6 @@ class _SplashPageState extends State<SplashPage> {
     return BlocListener<AuthBloc, AuthState>(
       listener: (context, state) {
         if (state is AuthAuthenticated) {
-          // Cek apakah ada deeplink payment yang menunggu (cold-start via deeplink).
-          // Jika ada, langsung ke halaman konfirmasi. Jika tidak, ke home.
           final pending = DeeplinkService.consumePending();
           if (pending != null) {
             context.go('/pay', extra: pending);
@@ -35,7 +79,7 @@ class _SplashPageState extends State<SplashPage> {
             context.go('/home');
           }
         } else if (state is AuthUnauthenticated) {
-          // Stay on splash to show welcome
+          setState(() { _showBiometric = false; _biometricLoading = false; });
         }
       },
       child: Scaffold(
@@ -44,7 +88,6 @@ class _SplashPageState extends State<SplashPage> {
           child: SafeArea(
             child: Stack(
               children: [
-                // Decorative circles
                 Positioned(
                   top: -120,
                   right: -90,
@@ -69,7 +112,6 @@ class _SplashPageState extends State<SplashPage> {
                     ),
                   ),
                 ),
-                // Content
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 28),
                   child: Column(
@@ -110,21 +152,10 @@ class _SplashPageState extends State<SplashPage> {
                         ),
                       ),
                       const Spacer(),
-                      Column(
-                        children: [
-                          AppButton(
-                            label: 'Buat Akun Baru',
-                            variant: AppButtonVariant.white,
-                            onPressed: () => context.push('/register'),
-                          ),
-                          const SizedBox(height: 11),
-                          AppButton(
-                            label: 'Masuk ke Akun',
-                            variant: AppButtonVariant.outlineWhite,
-                            onPressed: () => context.push('/login'),
-                          ),
-                        ],
-                      ),
+                      if (_showBiometric)
+                        _buildBiometricSection()
+                      else
+                        _buildWelcomeButtons(),
                       const SizedBox(height: 30),
                     ],
                   ),
@@ -134,6 +165,76 @@ class _SplashPageState extends State<SplashPage> {
           ),
         ),
       ),
+    );
+  }
+
+  Widget _buildBiometricSection() {
+    return Column(
+      children: [
+        GestureDetector(
+          onTap: _biometricLoading ? null : _triggerBiometric,
+          child: AnimatedContainer(
+            duration: const Duration(milliseconds: 200),
+            width: 80,
+            height: 80,
+            decoration: BoxDecoration(
+              color: Colors.white.withValues(alpha: 0.15),
+              shape: BoxShape.circle,
+              border: Border.all(color: Colors.white.withValues(alpha: 0.4), width: 2),
+            ),
+            child: _biometricLoading
+                ? const Center(
+                    child: SizedBox(
+                      width: 32,
+                      height: 32,
+                      child: CircularProgressIndicator(color: Colors.white, strokeWidth: 2.5),
+                    ),
+                  )
+                : const Icon(Icons.fingerprint_rounded, size: 44, color: Colors.white),
+          ),
+        ),
+        const SizedBox(height: 14),
+        const Text(
+          'Ketuk untuk masuk dengan biometrik',
+          style: TextStyle(
+            fontFamily: 'PlusJakartaSans',
+            fontSize: 14,
+            color: Colors.white,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+        const SizedBox(height: 20),
+        TextButton(
+          onPressed: () => setState(() => _showBiometric = false),
+          child: Text(
+            'Gunakan kata sandi',
+            style: TextStyle(
+              fontFamily: 'PlusJakartaSans',
+              color: Colors.white.withValues(alpha: 0.75),
+              fontSize: 13.5,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildWelcomeButtons() {
+    return Column(
+      children: [
+        AppButton(
+          label: 'Buat Akun Baru',
+          variant: AppButtonVariant.white,
+          onPressed: () => context.push('/register'),
+        ),
+        const SizedBox(height: 11),
+        AppButton(
+          label: 'Masuk ke Akun',
+          variant: AppButtonVariant.outlineWhite,
+          onPressed: () => context.push('/login'),
+        ),
+      ],
     );
   }
 }

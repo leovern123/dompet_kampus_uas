@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:local_auth/local_auth.dart';
 import '../../../core/theme/app_colors.dart';
+import '../../../data/datasources/local/secure_storage_datasource.dart';
+import '../../../injection/injection_container.dart';
 import '../../blocs/auth/auth_bloc.dart';
 import '../../widgets/app_avatar.dart';
 import '../../widgets/app_badge.dart';
@@ -133,7 +136,7 @@ class AccountPage extends StatelessWidget {
                               title: 'Login biometrik',
                               subtitle: 'Sidik jari',
                               onTap: () {},
-                              right: _Toggle(),
+                              right: _BiometricToggle(),
                             ),
                           ],
                         ),
@@ -273,17 +276,51 @@ class _Row extends StatelessWidget {
   }
 }
 
-class _Toggle extends StatefulWidget {
+class _BiometricToggle extends StatefulWidget {
   @override
-  State<_Toggle> createState() => _ToggleState();
+  State<_BiometricToggle> createState() => _BiometricToggleState();
 }
 
-class _ToggleState extends State<_Toggle> {
-  bool _on = true;
+class _BiometricToggleState extends State<_BiometricToggle> {
+  bool _on = false;
+  final _localAuth = LocalAuthentication();
+  final _storage = sl<SecureStorageDatasource>();
+
+  @override
+  void initState() {
+    super.initState();
+    _storage.getBiometricEnabled().then((v) {
+      if (mounted) setState(() => _on = v);
+    });
+  }
+
+  Future<void> _toggle() async {
+    if (!_on) {
+      // Aktifkan: verifikasi biometrik dulu sebelum menyimpan
+      final canAuth = await _localAuth.canCheckBiometrics || await _localAuth.isDeviceSupported();
+      if (!canAuth) {
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text('Perangkat tidak mendukung biometrik')),
+          );
+        }
+        return;
+      }
+      final authenticated = await _localAuth.authenticate(
+        localizedReason: 'Konfirmasi untuk mengaktifkan login biometrik',
+        options: const AuthenticationOptions(biometricOnly: false, stickyAuth: true),
+      );
+      if (!authenticated) return;
+    }
+    final newVal = !_on;
+    await _storage.saveBiometricEnabled(newVal);
+    if (mounted) setState(() => _on = newVal);
+  }
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => setState(() => _on = !_on),
+      onTap: _toggle,
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 180),
         width: 44,

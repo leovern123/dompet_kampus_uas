@@ -17,6 +17,7 @@ class AppConstants {
   static const String kUserData = 'user_data';
   static const String k2faMethod = 'twofa_method';
   static const String kFcmToken = 'fcm_token';
+  static const String kBiometricEnabled = 'biometric_enabled';
   static const String kAuthVerified = 'auth_verified';
 
   // 2FA Method identifiers
