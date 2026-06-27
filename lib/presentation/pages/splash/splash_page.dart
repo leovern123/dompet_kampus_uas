@@ -36,9 +36,8 @@ class _SplashPageState extends State<SplashPage> {
     if (!mounted) return;
 
     if (token != null && biometricEnabled) {
-      // Ada sesi tersimpan + biometrik aktif → tampilkan prompt biometrik
+      // Ada sesi tersimpan + biometrik aktif → tampilkan tombol sidik jari
       setState(() => _showBiometric = true);
-      _triggerBiometric();
     } else if (token != null) {
       // Ada sesi tersimpan tapi biometrik tidak aktif → auto login
       context.read<AuthBloc>().add(AuthCheckRequested());
@@ -58,8 +57,8 @@ class _SplashPageState extends State<SplashPage> {
       );
       if (!mounted) return;
       if (authenticated) {
-        // Beri jeda agar dialog biometrik sempat dismiss sebelum navigasi
-        await Future.delayed(const Duration(milliseconds: 300));
+        // Tunggu dialog biometrik sepenuhnya dismiss + frame selesai render
+        await Future.delayed(const Duration(milliseconds: 600));
         if (!mounted) return;
         context.read<AuthBloc>().add(AuthCheckRequested());
       } else {
