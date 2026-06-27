@@ -59,11 +59,11 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyCWAzGMTyg1uSspi1qfno71sj4iCfp7qGk',
-    appId: '1:948878883710:android:516b94bdc2276b68a0512f',
-    messagingSenderId: '948878883710',
-    projectId: 'fir-emoney-e9256',
-    storageBucket: 'fir-emoney-e9256.firebasestorage.app',
+    apiKey: 'AIzaSyAnDkJY7EP8MD7koAEcxOkSBtSXEmVY_FM',
+    appId: '1:130435149402:android:07110ca33500603c11b263',
+    messagingSenderId: '130435149402',
+    projectId: 'emoneyuas',
+    storageBucket: 'emoneyuas.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(

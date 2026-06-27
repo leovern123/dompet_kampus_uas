@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "130435149402",
+    "project_id": "emoneyuas",
+    "storage_bucket": "emoneyuas.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:130435149402:android:07110ca33500603c11b263",
+        "android_client_info": {
+          "package_name": "com.example.dompet_kampus"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "130435149402-4d4362ku00rallv3a3a14g76s7lq16s3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.dompet_kampus",
+            "certificate_hash": "5701ba5003392511192c26bf6d62a9fb286c15bb"
+          }
+        },
+        {
+          "client_id": "130435149402-jf4p4skehcd10sg4k5l4cgqdn3pa0k14.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAnDkJY7EP8MD7koAEcxOkSBtSXEmVY_FM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "130435149402-jf4p4skehcd10sg4k5l4cgqdn3pa0k14.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

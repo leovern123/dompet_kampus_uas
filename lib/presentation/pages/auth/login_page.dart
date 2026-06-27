@@ -39,7 +39,10 @@ class _LoginPageState extends State<LoginPage> {
         userCredential = await FirebaseAuth.instance.signInWithPopup(provider);
       } else {
         // Mobile: gunakan google_sign_in package
-        final googleSignIn = GoogleSignIn();
+        // serverClientId diperlukan agar Android mengembalikan idToken
+        final googleSignIn = GoogleSignIn(
+          serverClientId: '130435149402-jf4p4skehcd10sg4k5l4cgqdn3pa0k14.apps.googleusercontent.com',
+        );
         await googleSignIn.signOut();
         final googleUser = await googleSignIn.signIn();
         if (googleUser == null) {
