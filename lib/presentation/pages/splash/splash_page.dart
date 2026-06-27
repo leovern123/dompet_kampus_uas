@@ -85,6 +85,7 @@ class _SplashPageState extends State<SplashPage> {
         }
       },
       child: Scaffold(
+        resizeToAvoidBottomInset: false,
         body: Container(
           decoration: const BoxDecoration(gradient: AppColors.primaryGradient),
           child: SafeArea(
