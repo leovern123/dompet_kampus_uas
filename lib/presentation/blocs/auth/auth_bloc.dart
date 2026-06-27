@@ -87,19 +87,9 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       emit(AuthUnauthenticated());
       return;
     }
-    // Pastikan ApiClient memiliki token sebelum request berikutnya —
-    // diperlukan jika app di-restart karena ApiClient dibuat ulang tanpa token.
     await _authRepo.restoreApiToken();
     final user = await _authRepo.getSavedUser();
     if (user == null) {
-      emit(AuthUnauthenticated());
-      return;
-    }
-    final verified = await _authRepo.isAuthVerified();
-    if (!verified) {
-      // Login berhasil tapi 2FA belum dikonfirmasi sebelum app ditutup →
-      // anggap sesi tidak valid, mulai ulang dari awal (login/Google chooser).
-      await _authRepo.logout();
       emit(AuthUnauthenticated());
       return;
     }
