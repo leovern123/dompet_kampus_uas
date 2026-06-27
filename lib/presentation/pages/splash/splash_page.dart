@@ -86,9 +86,11 @@ class _SplashPageState extends State<SplashPage> {
       },
       child: Scaffold(
         resizeToAvoidBottomInset: false,
-        body: Container(
-          decoration: const BoxDecoration(gradient: AppColors.primaryGradient),
-          child: SafeArea(
+        body: LayoutBuilder(
+          builder: (context, constraints) => Container(
+            width: constraints.maxWidth,
+            height: constraints.maxHeight,
+            decoration: const BoxDecoration(gradient: AppColors.primaryGradient),
             child: Stack(
               children: [
                 Positioned(
@@ -115,52 +117,56 @@ class _SplashPageState extends State<SplashPage> {
                     ),
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 28),
-                  child: Column(
-                    children: [
-                      const Spacer(),
-                      const AppLogo(size: 92, light: true),
-                      const SizedBox(height: 26),
-                      const Text(
-                        'Dompet Kampus',
-                        style: TextStyle(
-                          fontFamily: 'PlusJakartaSans',
-                          fontSize: 30,
-                          fontWeight: FontWeight.w800,
-                          color: Colors.white,
-                          letterSpacing: -0.5,
-                        ),
+                Positioned.fill(
+                  child: SafeArea(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 28),
+                      child: Column(
+                        children: [
+                          const Spacer(),
+                          const AppLogo(size: 92, light: true),
+                          const SizedBox(height: 26),
+                          const Text(
+                            'Dompet Kampus',
+                            style: TextStyle(
+                              fontFamily: 'PlusJakartaSans',
+                              fontSize: 30,
+                              fontWeight: FontWeight.w800,
+                              color: Colors.white,
+                              letterSpacing: -0.5,
+                            ),
+                          ),
+                          const SizedBox(height: 2),
+                          const Text(
+                            'GLOBAL',
+                            style: TextStyle(
+                              fontFamily: 'PlusJakartaSans',
+                              fontSize: 18,
+                              fontWeight: FontWeight.w700,
+                              color: Colors.white,
+                              letterSpacing: 3,
+                            ),
+                          ),
+                          const SizedBox(height: 16),
+                          const Text(
+                            'Bayar, transfer, dan kelola uang kuliah\ndalam satu aplikasi yang aman.',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontFamily: 'PlusJakartaSans',
+                              fontSize: 15,
+                              color: Colors.white,
+                              height: 1.5,
+                            ),
+                          ),
+                          const Spacer(),
+                          if (_showBiometric)
+                            _buildBiometricSection()
+                          else
+                            _buildWelcomeButtons(),
+                          const SizedBox(height: 30),
+                        ],
                       ),
-                      const SizedBox(height: 2),
-                      const Text(
-                        'GLOBAL',
-                        style: TextStyle(
-                          fontFamily: 'PlusJakartaSans',
-                          fontSize: 18,
-                          fontWeight: FontWeight.w700,
-                          color: Colors.white,
-                          letterSpacing: 3,
-                        ),
-                      ),
-                      const SizedBox(height: 16),
-                      const Text(
-                        'Bayar, transfer, dan kelola uang kuliah\ndalam satu aplikasi yang aman.',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontFamily: 'PlusJakartaSans',
-                          fontSize: 15,
-                          color: Colors.white,
-                          height: 1.5,
-                        ),
-                      ),
-                      const Spacer(),
-                      if (_showBiometric)
-                        _buildBiometricSection()
-                      else
-                        _buildWelcomeButtons(),
-                      const SizedBox(height: 30),
-                    ],
+                    ),
                   ),
                 ),
               ],
