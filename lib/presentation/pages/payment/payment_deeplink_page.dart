@@ -206,8 +206,8 @@ class PaymentDeeplinkPage extends StatelessWidget {
                     child: Row(
                       children: [
                         Icon(DkgIcons.shieldCheck, size: 18, color: AppColors.primary),
-                        const SizedBox(width: 8),
-                        const Expanded(
+                        SizedBox(width: 8),
+                        Expanded(
                           child: Text(
                             'Pembayaran ini akan diverifikasi dengan PIN dan kode 2FA '
                             'sesuai pengaturan keamanan akun kamu.',

@@ -101,8 +101,7 @@ class _HomePageState extends State<HomePage> {
                                     color: Colors.white.withValues(alpha: 0.18),
                                     borderRadius: BorderRadius.circular(14),
                                   ),
-                                  child: Icon(DkgIcons.bell,
-                                      size: 21, color: Colors.white),
+                                  child: Icon(DkgIcons.bell, size: 21, color: Colors.white),
                                 ),
                                 Positioned(
                                   top: 10,
@@ -367,7 +366,7 @@ class _HomePageState extends State<HomePage> {
       {'icon': DkgIcons.food, 'label': 'Kantin', 'tone': 'red'},
       {'icon': DkgIcons.bill, 'label': 'UKT', 'tone': 'violet'},
       {'icon': DkgIcons.wifi, 'label': 'Paket Data', 'tone': 'green'},
-      {'icon': DkgIcons.gift, 'label': 'Voucher', 'tone': 'red'},
+      {'icon': DkgIcons.voucher, 'label': 'Voucher', 'tone': 'red'},
       {'icon': DkgIcons.heart, 'label': 'Donasi', 'tone': 'amber'},
       {'icon': DkgIcons.more, 'label': 'Lainnya', 'tone': 'slate'},
     ];
@@ -445,7 +444,7 @@ class _HomePageState extends State<HomePage> {
                     color: Colors.white.withValues(alpha: 0.12),
                     borderRadius: BorderRadius.circular(14),
                   ),
-                  child: Icon(DkgIcons.link, size: 24, color: Color(0xFF5B9BFF)),
+                  child: Icon(DkgIcons.link, size: 24, color: const Color(0xFF5B9BFF)),
                 ),
                 const SizedBox(width: 13),
                 const Expanded(

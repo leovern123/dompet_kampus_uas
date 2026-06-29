@@ -10,7 +10,7 @@ class AppLogo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const fontFamily = 'PlusJakartaSans';
+    const fontFamily = 'Inter';
 
     Widget icon = ClipRRect(
       borderRadius: BorderRadius.circular(size * 0.2),

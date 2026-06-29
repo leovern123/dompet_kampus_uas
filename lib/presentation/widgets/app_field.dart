@@ -70,7 +70,7 @@ class _AppFieldState extends State<AppField> {
           Text(
             widget.label!,
             style: const TextStyle(
-              fontFamily: 'PlusJakartaSans',
+              fontFamily: 'Inter',
               fontSize: 13.5,
               fontWeight: FontWeight.w600,
               color: AppColors.slate600,
@@ -122,7 +122,7 @@ class _AppFieldState extends State<AppField> {
                     textInputAction: widget.textInputAction,
                     onEditingComplete: widget.onEditingComplete,
                     style: const TextStyle(
-                      fontFamily: 'PlusJakartaSans',
+                      fontFamily: 'Inter',
                       fontSize: 15.5,
                       fontWeight: FontWeight.w500,
                       color: AppColors.ink,
@@ -130,7 +130,7 @@ class _AppFieldState extends State<AppField> {
                     decoration: InputDecoration(
                       hintText: widget.placeholder,
                       hintStyle: const TextStyle(
-                        fontFamily: 'PlusJakartaSans',
+                        fontFamily: 'Inter',
                         fontSize: 15.5,
                         fontWeight: FontWeight.w400,
                         color: AppColors.slate300,

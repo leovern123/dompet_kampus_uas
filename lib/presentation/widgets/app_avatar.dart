@@ -45,7 +45,7 @@ class AppAvatar extends StatelessWidget {
               child: Text(
                 initials,
                 style: TextStyle(
-                  fontFamily: 'PlusJakartaSans',
+                  fontFamily: 'Inter',
                   fontSize: size * 0.36,
                   fontWeight: FontWeight.w700,
                   color: Colors.white,

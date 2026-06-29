@@ -131,9 +131,9 @@ class _TwoFASmtpPageState extends State<TwoFASmtpPage> {
                         child: Row(
                           mainAxisSize: MainAxisSize.min,
                           children: [
-                            Icon(DkgIcons.info, size: 16, color: Color(0xFFB5760B)),
-                            SizedBox(width: 8),
-                            Text('Cek email inbox atau spam kamu',
+                            Icon(DkgIcons.info, size: 16, color: const Color(0xFFB5760B)),
+                            const SizedBox(width: 8),
+                            const Text('Cek email inbox atau spam kamu',
                                 style: TextStyle(
                                   fontFamily: 'Inter',
                                   fontSize: 12.5,

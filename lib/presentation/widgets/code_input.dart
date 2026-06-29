@@ -125,7 +125,7 @@ class _CodeInputState extends State<CodeInput> {
                           ? Text(
                               widget.value[i],
                               style: const TextStyle(
-                                fontFamily: 'PlusJakartaSans',
+                                fontFamily: 'Inter',
                                 fontSize: 24,
                                 fontWeight: FontWeight.w700,
                                 color: AppColors.ink,

@@ -35,7 +35,7 @@ class TransactionRow extends StatelessWidget {
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                       style: const TextStyle(
-                        fontFamily: 'PlusJakartaSans',
+                        fontFamily: 'Inter',
                         fontSize: 14.5,
                         fontWeight: FontWeight.w700,
                         color: AppColors.ink,
@@ -45,7 +45,7 @@ class TransactionRow extends StatelessWidget {
                     Text(
                       _formatDate(txn.createdAt),
                       style: const TextStyle(
-                        fontFamily: 'PlusJakartaSans',
+                        fontFamily: 'Inter',
                         fontSize: 12.5,
                         color: AppColors.slate400,
                       ),
@@ -57,7 +57,7 @@ class TransactionRow extends StatelessWidget {
               Text(
                 '${isCredit ? '+' : '-'}${CurrencyFormatter.format(txn.amount)}',
                 style: TextStyle(
-                  fontFamily: 'PlusJakartaSans',
+                  fontFamily: 'Inter',
                   fontSize: 14.5,
                   fontWeight: FontWeight.w800,
                   color: isCredit ? AppColors.green : AppColors.ink,

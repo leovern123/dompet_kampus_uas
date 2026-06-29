@@ -34,7 +34,7 @@ class _HistoryPageState extends State<HistoryPage> {
               children: [
                 const Text('Riwayat',
                     style: TextStyle(
-                      fontFamily: 'PlusJakartaSans',
+                      fontFamily: 'Inter',
                       fontSize: 22,
                       fontWeight: FontWeight.w800,
                       color: AppColors.ink,
@@ -56,7 +56,7 @@ class _HistoryPageState extends State<HistoryPage> {
                                 ),
                                 child: Text(t[1],
                                     style: TextStyle(
-                                      fontFamily: 'PlusJakartaSans',
+                                      fontFamily: 'Inter',
                                       fontSize: 13,
                                       fontWeight: FontWeight.w700,
                                       color: _tab == t[0] ? Colors.white : AppColors.slate500,
@@ -88,7 +88,7 @@ class _HistoryPageState extends State<HistoryPage> {
                   if (txns.isEmpty) {
                     return const Center(
                       child: Text('Tidak ada transaksi',
-                          style: TextStyle(fontFamily: 'PlusJakartaSans', color: AppColors.slate400)),
+                          style: TextStyle(fontFamily: 'Inter', color: AppColors.slate400)),
                     );
                   }
                   return ListView.separated(
@@ -104,7 +104,7 @@ class _HistoryPageState extends State<HistoryPage> {
                                   padding: EdgeInsets.only(left: 4, bottom: 10),
                                   child: Text('Hari ini',
                                       style: TextStyle(
-                                        fontFamily: 'PlusJakartaSans',
+                                        fontFamily: 'Inter',
                                         fontSize: 13,
                                         fontWeight: FontWeight.w700,
                                         color: AppColors.slate400,

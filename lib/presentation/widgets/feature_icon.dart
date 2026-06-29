@@ -87,4 +87,5 @@ class DkgIcons {
   static final IconData linkOff = PhosphorIcons.linkBreak();
   static final IconData shoppingBag = PhosphorIcons.shoppingBag();
   static final IconData google = PhosphorIcons.googleLogo();
+  static final IconData voucher = PhosphorIcons.ticket();
 }

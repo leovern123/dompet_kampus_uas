@@ -19,7 +19,7 @@ class AppBadge extends StatelessWidget {
       child: Text(
         label,
         style: TextStyle(
-          fontFamily: 'PlusJakartaSans',
+          fontFamily: 'Inter',
           fontSize: 11.5,
           fontWeight: FontWeight.w700,
           color: colors[1],

@@ -54,7 +54,7 @@ class MerchantCheckoutPage extends StatelessWidget {
                     children: [
                       Icon(DkgIcons.store, size: 14, color: Colors.white),
                       const SizedBox(width: 6),
-                      const Text('TokoBelanja',
+                      Text('TokoBelanja',
                           style: TextStyle(
                             fontFamily: 'Inter',
                             fontSize: 12,
