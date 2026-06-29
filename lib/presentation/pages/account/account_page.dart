@@ -50,7 +50,7 @@ class AccountPage extends StatelessWidget {
                           children: [
                             Text(user?.name ?? 'Pengguna',
                                 style: const TextStyle(
-                                  fontFamily: 'PlusJakartaSans',
+                                  fontFamily: 'Inter',
                                   fontSize: 19,
                                   fontWeight: FontWeight.w800,
                                   color: Colors.white,
@@ -58,7 +58,7 @@ class AccountPage extends StatelessWidget {
                             Text(user?.email ?? '',
                                 overflow: TextOverflow.ellipsis,
                                 style: const TextStyle(
-                                  fontFamily: 'PlusJakartaSans',
+                                  fontFamily: 'Inter',
                                   fontSize: 13,
                                   color: Colors.white70,
                                 )),
@@ -71,13 +71,13 @@ class AccountPage extends StatelessWidget {
                           color: Colors.white.withValues(alpha: 0.18),
                           borderRadius: BorderRadius.circular(20),
                         ),
-                        child: const Row(
+                        child: Row(
                           children: [
-                            Icon(Icons.verified_user_outlined, size: 14, color: Colors.white),
-                            SizedBox(width: 5),
-                            Text('Terverifikasi',
+                            Icon(DkgIcons.shieldCheck, size: 14, color: Colors.white),
+                            const SizedBox(width: 5),
+                            const Text('Terverifikasi',
                                 style: TextStyle(
-                                  fontFamily: 'PlusJakartaSans',
+                                  fontFamily: 'Inter',
                                   fontSize: 11.5,
                                   fontWeight: FontWeight.w700,
                                   color: Colors.white,
@@ -99,7 +99,7 @@ class AccountPage extends StatelessWidget {
                         padding: EdgeInsets.only(left: 4, bottom: 8),
                         child: Text('Keamanan',
                             style: TextStyle(
-                              fontFamily: 'PlusJakartaSans',
+                              fontFamily: 'Inter',
                               fontSize: 13,
                               fontWeight: FontWeight.w700,
                               color: AppColors.slate400,
@@ -114,7 +114,7 @@ class AccountPage extends StatelessWidget {
                         child: Column(
                           children: [
                             _Row(
-                              icon: Icons.verified_user_outlined,
+                              icon: DkgIcons.shieldCheck,
                               tone: 'green',
                               title: 'Verifikasi 2 langkah (2FA)',
                               subtitle: 'Aktif · Email OTP',
@@ -123,7 +123,7 @@ class AccountPage extends StatelessWidget {
                             ),
                             const Divider(height: 1, indent: 56, color: AppColors.line2),
                             _Row(
-                              icon: Icons.lock_outline_rounded,
+                              icon: DkgIcons.lock,
                               tone: 'blue',
                               title: 'Ubah PIN keamanan',
                               subtitle: 'Terakhir diubah 2 bln lalu',
@@ -131,7 +131,7 @@ class AccountPage extends StatelessWidget {
                             ),
                             const Divider(height: 1, indent: 56, color: AppColors.line2),
                             _Row(
-                              icon: Icons.fingerprint_rounded,
+                              icon: DkgIcons.fingerprint,
                               tone: 'violet',
                               title: 'Login biometrik',
                               subtitle: 'Sidik jari',
@@ -146,7 +146,7 @@ class AccountPage extends StatelessWidget {
                         padding: EdgeInsets.only(left: 4, bottom: 8),
                         child: Text('Akun',
                             style: TextStyle(
-                              fontFamily: 'PlusJakartaSans',
+                              fontFamily: 'Inter',
                               fontSize: 13,
                               fontWeight: FontWeight.w700,
                               color: AppColors.slate400,
@@ -160,11 +160,11 @@ class AccountPage extends StatelessWidget {
                         ),
                         child: Column(
                           children: [
-                            _Row(icon: Icons.person_outline_rounded, tone: 'blue', title: 'Data pribadi', onTap: () {}),
+                            _Row(icon: DkgIcons.user, tone: 'blue', title: 'Data pribadi', onTap: () {}),
                             const Divider(height: 1, indent: 56, color: AppColors.line2),
-                            _Row(icon: Icons.account_balance_outlined, tone: 'green', title: 'Rekening & kartu tersimpan', onTap: () {}),
+                            _Row(icon: DkgIcons.bank, tone: 'green', title: 'Rekening & kartu tersimpan', onTap: () {}),
                             const Divider(height: 1, indent: 56, color: AppColors.line2),
-                            _Row(icon: Icons.settings_outlined, tone: 'slate', title: 'Pengaturan aplikasi', onTap: () {}),
+                            _Row(icon: DkgIcons.settings, tone: 'slate', title: 'Pengaturan aplikasi', onTap: () {}),
                           ],
                         ),
                       ),
@@ -179,14 +179,14 @@ class AccountPage extends StatelessWidget {
                             borderRadius: BorderRadius.circular(16),
                             boxShadow: AppColors.shadowSoft,
                           ),
-                          child: const Row(
+                          child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Icon(Icons.logout_rounded, size: 20, color: AppColors.red),
-                              SizedBox(width: 9),
-                              Text('Keluar',
+                              Icon(DkgIcons.logout, size: 20, color: AppColors.red),
+                              const SizedBox(width: 9),
+                              const Text('Keluar',
                                   style: TextStyle(
-                                    fontFamily: 'PlusJakartaSans',
+                                    fontFamily: 'Inter',
                                     color: AppColors.red,
                                     fontWeight: FontWeight.w700,
                                     fontSize: 15,
@@ -199,7 +199,7 @@ class AccountPage extends StatelessWidget {
                       const Center(
                         child: Text('Dompet Kampus Global · v1.0.0',
                             style: TextStyle(
-                              fontFamily: 'PlusJakartaSans',
+                              fontFamily: 'Inter',
                               fontSize: 12,
                               color: AppColors.slate400,
                             )),
@@ -251,7 +251,7 @@ class _Row extends StatelessWidget {
                 children: [
                   Text(title,
                       style: const TextStyle(
-                        fontFamily: 'PlusJakartaSans',
+                        fontFamily: 'Inter',
                         fontSize: 14.5,
                         fontWeight: FontWeight.w700,
                         color: AppColors.ink,
@@ -260,7 +260,7 @@ class _Row extends StatelessWidget {
                     const SizedBox(height: 2),
                     Text(subtitle!,
                         style: const TextStyle(
-                          fontFamily: 'PlusJakartaSans',
+                          fontFamily: 'Inter',
                           fontSize: 12.5,
                           color: AppColors.slate400,
                         )),
@@ -268,7 +268,7 @@ class _Row extends StatelessWidget {
                 ],
               ),
             ),
-            right ?? const Icon(Icons.chevron_right_rounded, size: 18, color: AppColors.slate400),
+            right ?? Icon(DkgIcons.chevRight, size: 18, color: AppColors.slate400),
           ],
         ),
       ),

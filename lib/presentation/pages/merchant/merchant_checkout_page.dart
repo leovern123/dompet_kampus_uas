@@ -32,13 +32,13 @@ class MerchantCheckoutPage extends StatelessWidget {
             child: Row(
               children: [
                 IconButton(
-                  icon: const Icon(Icons.arrow_back_ios_new_rounded, color: Colors.white, size: 20),
+                  icon: Icon(DkgIcons.arrowLeft, color: Colors.white, size: 20),
                   onPressed: () => context.go('/home'),
                 ),
                 const Expanded(
                   child: Text('Pembayaran',
                       style: TextStyle(
-                        fontFamily: 'PlusJakartaSans',
+                        fontFamily: 'Inter',
                         color: Colors.white,
                         fontWeight: FontWeight.w800,
                         fontSize: 17,
@@ -50,13 +50,13 @@ class MerchantCheckoutPage extends StatelessWidget {
                     color: Colors.white.withValues(alpha: 0.2),
                     borderRadius: BorderRadius.circular(20),
                   ),
-                  child: const Row(
+                  child: Row(
                     children: [
-                      Icon(Icons.storefront_outlined, size: 14, color: Colors.white),
-                      SizedBox(width: 6),
-                      Text('TokoBelanja',
+                      Icon(DkgIcons.store, size: 14, color: Colors.white),
+                      const SizedBox(width: 6),
+                      const Text('TokoBelanja',
                           style: TextStyle(
-                            fontFamily: 'PlusJakartaSans',
+                            fontFamily: 'Inter',
                             fontSize: 12,
                             fontWeight: FontWeight.w800,
                             color: Colors.white,
@@ -87,7 +87,7 @@ class MerchantCheckoutPage extends StatelessWidget {
                           padding: EdgeInsets.symmetric(vertical: 10),
                           child: Text('Pesanan #TB-2026-88142',
                               style: TextStyle(
-                                fontFamily: 'PlusJakartaSans',
+                                fontFamily: 'Inter',
                                 fontSize: 12.5,
                                 fontWeight: FontWeight.w700,
                                 color: AppColors.slate400,
@@ -110,7 +110,7 @@ class MerchantCheckoutPage extends StatelessWidget {
                                         color: const Color(0xFFFFF1E9),
                                         borderRadius: BorderRadius.circular(12),
                                       ),
-                                      child: const Center(child: Icon(Icons.shopping_bag_outlined, size: 22, color: _orange)),
+                                      child: Center(child: Icon(DkgIcons.shoppingBag, size: 22, color: _orange)),
                                     ),
                                     const SizedBox(width: 12),
                                     Expanded(
@@ -121,7 +121,7 @@ class MerchantCheckoutPage extends StatelessWidget {
                                               maxLines: 1,
                                               overflow: TextOverflow.ellipsis,
                                               style: const TextStyle(
-                                                fontFamily: 'PlusJakartaSans',
+                                                fontFamily: 'Inter',
                                                 fontSize: 14,
                                                 fontWeight: FontWeight.w700,
                                                 color: AppColors.ink,
@@ -135,7 +135,7 @@ class MerchantCheckoutPage extends StatelessWidget {
                                     Text(
                                       CurrencyFormatter.format((item['price'] as double) * (item['qty'] as int)),
                                       style: const TextStyle(
-                                        fontFamily: 'PlusJakartaSans',
+                                        fontFamily: 'Inter',
                                         fontSize: 14,
                                         fontWeight: FontWeight.w800,
                                         color: AppColors.ink,
@@ -158,7 +158,7 @@ class MerchantCheckoutPage extends StatelessWidget {
                       alignment: Alignment.centerLeft,
                       child: Text('Metode pembayaran',
                           style: TextStyle(
-                            fontFamily: 'PlusJakartaSans',
+                            fontFamily: 'Inter',
                             fontSize: 13,
                             fontWeight: FontWeight.w700,
                             color: AppColors.slate400,
@@ -183,7 +183,7 @@ class MerchantCheckoutPage extends StatelessWidget {
                             children: [
                               Text('Dompet Kampus Global',
                                   style: TextStyle(
-                                    fontFamily: 'PlusJakartaSans',
+                                    fontFamily: 'Inter',
                                     fontSize: 14.5,
                                     fontWeight: FontWeight.w800,
                                     color: AppColors.ink,
@@ -193,7 +193,7 @@ class MerchantCheckoutPage extends StatelessWidget {
                             ],
                           ),
                         ),
-                        const Icon(Icons.check_rounded, size: 20, color: AppColors.primary),
+                        Icon(DkgIcons.check, size: 20, color: AppColors.primary),
                       ],
                     ),
                   ),
@@ -219,14 +219,14 @@ class MerchantCheckoutPage extends StatelessWidget {
                             children: [
                               const Text('Total',
                                   style: TextStyle(
-                                    fontFamily: 'PlusJakartaSans',
+                                    fontFamily: 'Inter',
                                     fontSize: 15.5,
                                     fontWeight: FontWeight.w700,
                                     color: AppColors.slate600,
                                   )),
                               Text(CurrencyFormatter.format(total),
                                   style: const TextStyle(
-                                    fontFamily: 'PlusJakartaSans',
+                                    fontFamily: 'Inter',
                                     fontSize: 15.5,
                                     fontWeight: FontWeight.w800,
                                     color: _orange,
@@ -273,9 +273,9 @@ class _TotalLine extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(label,
-              style: const TextStyle(fontSize: 14, color: AppColors.slate500, fontFamily: 'PlusJakartaSans')),
+              style: const TextStyle(fontSize: 14, color: AppColors.slate500, fontFamily: 'Inter')),
           Text(value,
-              style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: AppColors.ink, fontFamily: 'PlusJakartaSans')),
+              style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: AppColors.ink, fontFamily: 'Inter')),
         ],
       ),
     );

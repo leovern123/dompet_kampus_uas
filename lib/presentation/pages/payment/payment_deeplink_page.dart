@@ -58,13 +58,13 @@ class PaymentDeeplinkPage extends StatelessWidget {
             child: Row(
               children: [
                 IconButton(
-                  icon: const Icon(Icons.close_rounded, color: Colors.white),
+                  icon: Icon(DkgIcons.close, color: Colors.white),
                   onPressed: () => _cancel(context, payload),
                 ),
                 const Expanded(
                   child: Text('Konfirmasi Pembayaran',
                       style: TextStyle(
-                        fontFamily: 'PlusJakartaSans',
+                        fontFamily: 'Inter',
                         color: Colors.white,
                         fontWeight: FontWeight.w800,
                         fontSize: 17,
@@ -78,11 +78,11 @@ class PaymentDeeplinkPage extends StatelessWidget {
                   ),
                   child: Row(
                     children: [
-                      const Icon(Icons.storefront_outlined, size: 14, color: Colors.white),
+                      Icon(DkgIcons.store, size: 14, color: Colors.white),
                       const SizedBox(width: 6),
                       Text(payload.merchantName,
                           style: const TextStyle(
-                            fontFamily: 'PlusJakartaSans',
+                            fontFamily: 'Inter',
                             fontSize: 12,
                             fontWeight: FontWeight.w800,
                             color: Colors.white,
@@ -111,7 +111,7 @@ class PaymentDeeplinkPage extends StatelessWidget {
                       children: [
                         const Text('Total Pembayaran',
                             style: TextStyle(
-                              fontFamily: 'PlusJakartaSans',
+                              fontFamily: 'Inter',
                               fontSize: 13,
                               fontWeight: FontWeight.w700,
                               color: AppColors.slate400,
@@ -119,7 +119,7 @@ class PaymentDeeplinkPage extends StatelessWidget {
                         const SizedBox(height: 6),
                         Text(CurrencyFormatter.format(payload.amount),
                             style: const TextStyle(
-                              fontFamily: 'PlusJakartaSans',
+                              fontFamily: 'Inter',
                               fontSize: 30,
                               fontWeight: FontWeight.w800,
                               color: AppColors.ink,
@@ -157,7 +157,7 @@ class PaymentDeeplinkPage extends StatelessWidget {
                       alignment: Alignment.centerLeft,
                       child: Text('Metode pembayaran',
                           style: TextStyle(
-                            fontFamily: 'PlusJakartaSans',
+                            fontFamily: 'Inter',
                             fontSize: 13,
                             fontWeight: FontWeight.w700,
                             color: AppColors.slate400,
@@ -182,7 +182,7 @@ class PaymentDeeplinkPage extends StatelessWidget {
                             children: [
                               Text('Dompet Kampus Global',
                                   style: TextStyle(
-                                    fontFamily: 'PlusJakartaSans',
+                                    fontFamily: 'Inter',
                                     fontSize: 14.5,
                                     fontWeight: FontWeight.w800,
                                     color: AppColors.ink,
@@ -192,7 +192,7 @@ class PaymentDeeplinkPage extends StatelessWidget {
                             ],
                           ),
                         ),
-                        const Icon(Icons.check_rounded, size: 20, color: AppColors.primary),
+                        Icon(DkgIcons.check, size: 20, color: AppColors.primary),
                       ],
                     ),
                   ),
@@ -204,15 +204,15 @@ class PaymentDeeplinkPage extends StatelessWidget {
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: Row(
-                      children: const [
+                      children: [
                         Icon(DkgIcons.shieldCheck, size: 18, color: AppColors.primary),
-                        SizedBox(width: 8),
-                        Expanded(
+                        const SizedBox(width: 8),
+                        const Expanded(
                           child: Text(
                             'Pembayaran ini akan diverifikasi dengan PIN dan kode 2FA '
                             'sesuai pengaturan keamanan akun kamu.',
                             style: TextStyle(
-                              fontFamily: 'PlusJakartaSans',
+                              fontFamily: 'Inter',
                               fontSize: 12.5,
                               color: AppColors.primary,
                               fontWeight: FontWeight.w600,
@@ -265,12 +265,12 @@ class _DetailRow extends StatelessWidget {
           SizedBox(
             width: 90,
             child: Text(label,
-                style: const TextStyle(fontSize: 13.5, color: AppColors.slate500, fontFamily: 'PlusJakartaSans')),
+                style: const TextStyle(fontSize: 13.5, color: AppColors.slate500, fontFamily: 'Inter')),
           ),
           Expanded(
             child: Text(value,
                 textAlign: TextAlign.right,
-                style: const TextStyle(fontSize: 13.5, fontWeight: FontWeight.w700, color: AppColors.ink, fontFamily: 'PlusJakartaSans')),
+                style: const TextStyle(fontSize: 13.5, fontWeight: FontWeight.w700, color: AppColors.ink, fontFamily: 'Inter')),
           ),
         ],
       ),
@@ -299,14 +299,14 @@ class _ErrorView extends StatelessWidget {
                   color: AppColors.redSurface,
                   borderRadius: BorderRadius.circular(18),
                 ),
-                child: const Center(
-                  child: Icon(Icons.link_off_rounded, size: 30, color: AppColors.red),
+                child: Center(
+                  child: Icon(DkgIcons.linkOff, size: 30, color: AppColors.red),
                 ),
               ),
               const SizedBox(height: 18),
               const Text('Link Pembayaran Tidak Valid',
                   style: TextStyle(
-                    fontFamily: 'PlusJakartaSans',
+                    fontFamily: 'Inter',
                     fontSize: 19,
                     fontWeight: FontWeight.w800,
                     color: AppColors.ink,

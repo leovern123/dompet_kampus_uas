@@ -66,14 +66,14 @@ class _PaymentQrPageState extends State<PaymentQrPage> {
         child: Row(
           children: [
             IconButton(
-              icon: const Icon(Icons.close_rounded, color: Colors.white, size: 24),
+              icon: Icon(DkgIcons.close, color: Colors.white, size: 24),
               onPressed: () => context.go('/home'),
             ),
             const Expanded(
               child: Text('Scan QRIS',
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    fontFamily: 'PlusJakartaSans',
+                    fontFamily: 'Inter',
                     color: Colors.white,
                     fontWeight: FontWeight.w700,
                     fontSize: 16,
@@ -135,7 +135,7 @@ class _PaymentQrPageState extends State<PaymentQrPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Icon(
-                _detected ? Icons.check_rounded : null,
+                _detected ? DkgIcons.check : null,
                 color: AppColors.green,
                 size: 16,
               ),
@@ -143,7 +143,7 @@ class _PaymentQrPageState extends State<PaymentQrPage> {
               Text(
                 _detected ? 'Kode terdeteksi' : 'Arahkan kamera ke kode QRIS',
                 style: TextStyle(
-                  fontFamily: 'PlusJakartaSans',
+                  fontFamily: 'Inter',
                   color: Colors.white.withValues(alpha: 0.7),
                   fontSize: 13.5,
                 ),
@@ -166,7 +166,7 @@ class _PaymentQrPageState extends State<PaymentQrPage> {
                         borderRadius: BorderRadius.circular(14),
                       ),
                       child: Icon(
-                        label == 'Bayar' ? Icons.qr_code_rounded : Icons.qr_code_2_rounded,
+                        DkgIcons.qris,
                         size: 22,
                         color: Colors.white,
                       ),
@@ -174,7 +174,7 @@ class _PaymentQrPageState extends State<PaymentQrPage> {
                     const SizedBox(height: 7),
                     Text(label,
                         style: const TextStyle(
-                          fontFamily: 'PlusJakartaSans',
+                          fontFamily: 'Inter',
                           fontSize: 11.5,
                           fontWeight: FontWeight.w600,
                           color: Colors.white70,
@@ -209,7 +209,7 @@ class _PaymentQrPageState extends State<PaymentQrPage> {
               const SizedBox(height: 16),
               Row(
                 children: [
-                  const FeatureIcon(icon: Icons.storefront_outlined, tone: 'violet', size: 52, iconSize: 26),
+                  FeatureIcon(icon: DkgIcons.store, tone: 'violet', size: 52, iconSize: 26),
                   const SizedBox(width: 13),
                   Expanded(
                     child: Column(
@@ -217,7 +217,7 @@ class _PaymentQrPageState extends State<PaymentQrPage> {
                       children: [
                         Text(_merchant['name'] as String,
                             style: const TextStyle(
-                              fontFamily: 'PlusJakartaSans',
+                              fontFamily: 'Inter',
                               fontSize: 16.5,
                               fontWeight: FontWeight.w800,
                               color: AppColors.ink,
@@ -235,7 +235,7 @@ class _PaymentQrPageState extends State<PaymentQrPage> {
               const SizedBox(height: 4),
               Text(CurrencyFormatter.format(amount),
                   style: const TextStyle(
-                    fontFamily: 'PlusJakartaSans',
+                    fontFamily: 'Inter',
                     fontSize: 38,
                     fontWeight: FontWeight.w800,
                     color: AppColors.ink,
@@ -244,7 +244,7 @@ class _PaymentQrPageState extends State<PaymentQrPage> {
               const SizedBox(height: 18),
               AppButton(
                 label: 'Bayar Sekarang',
-                icon: const Icon(Icons.lock_outline_rounded, size: 19, color: Colors.white),
+                icon: Icon(DkgIcons.lock, size: 19, color: Colors.white),
                 onPressed: () {
                   setState(() => _sheetShown = true);
                   context.go('/pin', extra: {

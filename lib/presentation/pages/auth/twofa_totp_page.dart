@@ -77,7 +77,7 @@ class _TwoFATotpPageState extends State<TwoFATotpPage> {
               Align(
                 alignment: Alignment.topLeft,
                 child: IconButton(
-                  icon: const Icon(DkgIcons.arrowLeft, color: AppColors.ink),
+                  icon: Icon(DkgIcons.arrowLeft, color: AppColors.ink),
                   onPressed: () {
                     if (_step == 'code' && widget.mode == 'setup') {
                       setState(() => _step = 'scan');
@@ -112,11 +112,11 @@ class _TwoFATotpPageState extends State<TwoFATotpPage> {
       padding: const EdgeInsets.fromLTRB(28, 8, 28, 24),
       child: Column(
         children: [
-          const FeatureIcon(icon: DkgIcons.smartphone, tone: 'violet', size: 74, iconSize: 36),
+          FeatureIcon(icon: DkgIcons.smartphone, tone: 'violet', size: 74, iconSize: 36),
           const SizedBox(height: 18),
           const Text('Hubungkan Authenticator',
               style: TextStyle(
-                fontFamily: 'PlusJakartaSans',
+                fontFamily: 'Inter',
                 fontSize: 23,
                 fontWeight: FontWeight.w800,
                 color: AppColors.ink,
@@ -148,7 +148,7 @@ class _TwoFATotpPageState extends State<TwoFATotpPage> {
                   width: 172,
                   height: 172,
                   color: AppColors.bg,
-                  child: const Center(child: Icon(Icons.qr_code_rounded, size: 80, color: AppColors.slate400)),
+                  child: Center(child: Icon(DkgIcons.qris, size: 80, color: AppColors.slate400)),
                 ),
               ),
             ),
@@ -162,7 +162,7 @@ class _TwoFATotpPageState extends State<TwoFATotpPage> {
               children: [
                 const Text('Atau masukkan kunci manual',
                     style: TextStyle(
-                      fontFamily: 'PlusJakartaSans',
+                      fontFamily: 'Inter',
                       fontSize: 11.5,
                       fontWeight: FontWeight.w700,
                       color: AppColors.slate400,
@@ -203,7 +203,7 @@ class _TwoFATotpPageState extends State<TwoFATotpPage> {
                           size: 17, color: _copied ? AppColors.green : AppColors.primary),
                       label: Text(_copied ? 'Tersalin' : 'Salin',
                           style: TextStyle(
-                            fontFamily: 'PlusJakartaSans',
+                            fontFamily: 'Inter',
                             color: _copied ? AppColors.green : AppColors.primary,
                             fontWeight: FontWeight.w700,
                             fontSize: 13,
@@ -229,11 +229,11 @@ class _TwoFATotpPageState extends State<TwoFATotpPage> {
       padding: const EdgeInsets.fromLTRB(28, 8, 28, 24),
       child: Column(
         children: [
-          const FeatureIcon(icon: DkgIcons.smartphone, tone: 'violet', size: 74, iconSize: 36),
+          FeatureIcon(icon: DkgIcons.smartphone, tone: 'violet', size: 74, iconSize: 36),
           const SizedBox(height: 18),
           const Text('Masukkan kode 6 digit',
               style: TextStyle(
-                fontFamily: 'PlusJakartaSans',
+                fontFamily: 'Inter',
                 fontSize: 23,
                 fontWeight: FontWeight.w800,
                 color: AppColors.ink,
@@ -253,7 +253,7 @@ class _TwoFATotpPageState extends State<TwoFATotpPage> {
             const SizedBox(height: 12),
             const Text('Kode tidak cocok',
                 style: TextStyle(
-                  fontFamily: 'PlusJakartaSans',
+                  fontFamily: 'Inter',
                   color: AppColors.red,
                   fontSize: 13,
                   fontWeight: FontWeight.w600,

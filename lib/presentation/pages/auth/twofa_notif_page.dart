@@ -45,7 +45,7 @@ class _TwoFANotifPageState extends State<TwoFANotifPage> {
               Align(
                 alignment: Alignment.topLeft,
                 child: IconButton(
-                  icon: const Icon(Icons.arrow_back_ios_new_rounded, color: AppColors.ink),
+                  icon: Icon(DkgIcons.arrowLeft, color: AppColors.ink),
                   onPressed: () => context.go(widget.mode == 'setup' ? '/setup-2fa' : '/login'),
                 ),
               ),
@@ -57,8 +57,8 @@ class _TwoFANotifPageState extends State<TwoFANotifPage> {
                       const SizedBox(height: 20),
                       FeatureIcon(
                         icon: _phase == 'approved'
-                            ? Icons.verified_user_outlined
-                            : Icons.notifications_outlined,
+                            ? DkgIcons.shieldCheck
+                            : DkgIcons.bell,
                         tone: 'green',
                         size: 82,
                         iconSize: 40,
@@ -67,7 +67,7 @@ class _TwoFANotifPageState extends State<TwoFANotifPage> {
                       Text(
                         _phase == 'approved' ? 'Disetujui!' : 'Cek notifikasi kamu',
                         style: const TextStyle(
-                          fontFamily: 'PlusJakartaSans',
+                          fontFamily: 'Inter',
                           fontSize: 23,
                           fontWeight: FontWeight.w800,
                           color: AppColors.ink,
@@ -82,7 +82,7 @@ class _TwoFANotifPageState extends State<TwoFANotifPage> {
                             : 'Kami mengirim notifikasi ke perangkatmu. Ketuk "Setujui" untuk melanjutkan.',
                         textAlign: TextAlign.center,
                         style: const TextStyle(
-                          fontFamily: 'PlusJakartaSans',
+                          fontFamily: 'Inter',
                           fontSize: 14.5,
                           color: AppColors.slate500,
                           height: 1.55,
@@ -104,7 +104,7 @@ class _TwoFANotifPageState extends State<TwoFANotifPage> {
                             SizedBox(width: 10),
                             Text('Menunggu persetujuan…',
                                 style: TextStyle(
-                                  fontFamily: 'PlusJakartaSans',
+                                  fontFamily: 'Inter',
                                   fontSize: 13.5,
                                   color: AppColors.slate400,
                                   fontWeight: FontWeight.w600,

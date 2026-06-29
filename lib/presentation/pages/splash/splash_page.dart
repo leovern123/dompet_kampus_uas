@@ -9,6 +9,7 @@ import '../../../injection/injection_container.dart';
 import '../../blocs/auth/auth_bloc.dart';
 import '../../widgets/app_button.dart';
 import '../../widgets/app_logo.dart';
+import '../../widgets/feature_icon.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
@@ -129,7 +130,7 @@ class _SplashPageState extends State<SplashPage> {
                           const Text(
                             'Dompet Kampus',
                             style: TextStyle(
-                              fontFamily: 'PlusJakartaSans',
+                              fontFamily: 'Inter',
                               fontSize: 30,
                               fontWeight: FontWeight.w800,
                               color: Colors.white,
@@ -140,7 +141,7 @@ class _SplashPageState extends State<SplashPage> {
                           const Text(
                             'GLOBAL',
                             style: TextStyle(
-                              fontFamily: 'PlusJakartaSans',
+                              fontFamily: 'Inter',
                               fontSize: 18,
                               fontWeight: FontWeight.w700,
                               color: Colors.white,
@@ -152,7 +153,7 @@ class _SplashPageState extends State<SplashPage> {
                             'Bayar, transfer, dan kelola uang kuliah\ndalam satu aplikasi yang aman.',
                             textAlign: TextAlign.center,
                             style: TextStyle(
-                              fontFamily: 'PlusJakartaSans',
+                              fontFamily: 'Inter',
                               fontSize: 15,
                               color: Colors.white,
                               height: 1.5,
@@ -199,14 +200,14 @@ class _SplashPageState extends State<SplashPage> {
                       child: CircularProgressIndicator(color: Colors.white, strokeWidth: 2.5),
                     ),
                   )
-                : const Icon(Icons.fingerprint_rounded, size: 44, color: Colors.white),
+                : Icon(DkgIcons.fingerprint, size: 44, color: Colors.white),
           ),
         ),
         const SizedBox(height: 14),
         const Text(
           'Ketuk untuk masuk dengan biometrik',
           style: TextStyle(
-            fontFamily: 'PlusJakartaSans',
+            fontFamily: 'Inter',
             fontSize: 14,
             color: Colors.white,
             fontWeight: FontWeight.w600,
@@ -218,7 +219,7 @@ class _SplashPageState extends State<SplashPage> {
           child: Text(
             'Gunakan kata sandi',
             style: TextStyle(
-              fontFamily: 'PlusJakartaSans',
+              fontFamily: 'Inter',
               color: Colors.white.withValues(alpha: 0.75),
               fontSize: 13.5,
               fontWeight: FontWeight.w600,

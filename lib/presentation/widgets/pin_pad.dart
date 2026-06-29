@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../core/theme/app_colors.dart';
+import 'feature_icon.dart';
 
 class PinPad extends StatelessWidget {
   final String value;
@@ -68,13 +69,13 @@ class PinPad extends StatelessWidget {
             if (k == 'bio') {
               return _KeyButton(
                 onTap: () => onComplete?.call(value),
-                child: const Icon(Icons.fingerprint_rounded, size: 28, color: AppColors.primary),
+                child: Icon(DkgIcons.fingerprint, size: 28, color: AppColors.primary),
               );
             }
             if (k == 'del') {
               return _KeyButton(
                 onTap: () => _press('del'),
-                child: const Icon(Icons.arrow_back_ios_rounded, size: 22, color: AppColors.slate600),
+                child: Icon(DkgIcons.arrowLeft, size: 22, color: AppColors.slate600),
               );
             }
             return _KeyButton(
@@ -82,7 +83,7 @@ class PinPad extends StatelessWidget {
               child: Text(
                 k,
                 style: const TextStyle(
-                  fontFamily: 'PlusJakartaSans',
+                  fontFamily: 'Inter',
                   fontSize: 26,
                   fontWeight: FontWeight.w600,
                   color: AppColors.ink,

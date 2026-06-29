@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 import '../../core/theme/app_colors.dart';
 
 class FeatureIcon extends StatelessWidget {
@@ -32,51 +33,58 @@ class FeatureIcon extends StatelessWidget {
   }
 }
 
-// Map design icon names to Material icons
+// Map design icon names to Phosphor Icons
 class DkgIcons {
-  static const IconData home = Icons.home_outlined;
-  static const IconData history = Icons.history_rounded;
-  static const IconData scan = Icons.qr_code_scanner_rounded;
-  static const IconData gift = Icons.card_giftcard_rounded;
-  static const IconData user = Icons.person_outline_rounded;
-  static const IconData send = Icons.send_rounded;
-  static const IconData wallet = Icons.account_balance_wallet_outlined;
-  static const IconData plus = Icons.add_rounded;
-  static const IconData bell = Icons.notifications_outlined;
-  static const IconData eye = Icons.visibility_outlined;
-  static const IconData eyeOff = Icons.visibility_off_outlined;
-  static const IconData shield = Icons.shield_outlined;
-  static const IconData shieldCheck = Icons.verified_user_outlined;
-  static const IconData check = Icons.check_rounded;
-  static const IconData mail = Icons.mail_outline_rounded;
-  static const IconData lock = Icons.lock_outline_rounded;
-  static const IconData phone = Icons.phone_outlined;
-  static const IconData copy = Icons.copy_rounded;
-  static const IconData bank = Icons.account_balance_outlined;
-  static const IconData arrowLeft = Icons.arrow_back_ios_new_rounded;
-  static const IconData arrowRight = Icons.arrow_forward_ios_rounded;
-  static const IconData chevRight = Icons.chevron_right_rounded;
-  static const IconData chevDown = Icons.keyboard_arrow_down_rounded;
-  static const IconData topup = Icons.north_rounded;
-  static const IconData bill = Icons.receipt_outlined;
-  static const IconData pulsa = Icons.smartphone_outlined;
-  static const IconData more = Icons.more_horiz_rounded;
-  static const IconData close = Icons.close_rounded;
-  static const IconData search = Icons.search_rounded;
-  static const IconData fingerprint = Icons.fingerprint_rounded;
-  static const IconData key = Icons.key_outlined;
-  static const IconData xcircle = Icons.cancel_outlined;
-  static const IconData info = Icons.info_outline_rounded;
-  static const IconData qris = Icons.qr_code_rounded;
-  static const IconData store = Icons.storefront_outlined;
-  static const IconData link = Icons.link_rounded;
-  static const IconData clock = Icons.access_time_rounded;
-  static const IconData refresh = Icons.refresh_rounded;
-  static const IconData settings = Icons.settings_outlined;
-  static const IconData logout = Icons.logout_rounded;
-  static const IconData star = Icons.star_outline_rounded;
-  static const IconData splitBill = Icons.receipt_long_outlined;
-  static const IconData card = Icons.credit_card_outlined;
-  static const IconData food = Icons.restaurant_outlined;
-  static const IconData smartphone = Icons.smartphone_rounded;
+  static final IconData home = PhosphorIcons.house();
+  static final IconData history = PhosphorIcons.clockCounterClockwise();
+  static final IconData scan = PhosphorIcons.scan();
+  static final IconData gift = PhosphorIcons.gift();
+  static final IconData user = PhosphorIcons.user();
+  static final IconData send = PhosphorIcons.paperPlaneRight();
+  static final IconData wallet = PhosphorIcons.wallet();
+  static final IconData plus = PhosphorIcons.plus();
+  static final IconData bell = PhosphorIcons.bell();
+  static final IconData eye = PhosphorIcons.eye();
+  static final IconData eyeOff = PhosphorIcons.eyeSlash();
+  static final IconData shield = PhosphorIcons.shield();
+  static final IconData shieldCheck = PhosphorIcons.shieldCheck();
+  static final IconData check = PhosphorIcons.check();
+  static final IconData mail = PhosphorIcons.envelope();
+  static final IconData lock = PhosphorIcons.lockKey();
+  static final IconData phone = PhosphorIcons.phone();
+  static final IconData copy = PhosphorIcons.copy();
+  static final IconData bank = PhosphorIcons.bank();
+  static final IconData arrowLeft = PhosphorIcons.arrowLeft();
+  static final IconData arrowRight = PhosphorIcons.arrowRight();
+  static final IconData chevRight = PhosphorIcons.caretRight();
+  static final IconData chevDown = PhosphorIcons.caretDown();
+  static final IconData topup = PhosphorIcons.arrowUp();
+  static final IconData bill = PhosphorIcons.receipt();
+  static final IconData pulsa = PhosphorIcons.deviceMobile();
+  static final IconData more = PhosphorIcons.dotsThree();
+  static final IconData close = PhosphorIcons.x();
+  static final IconData search = PhosphorIcons.magnifyingGlass();
+  static final IconData fingerprint = PhosphorIcons.fingerprint();
+  static final IconData key = PhosphorIcons.key();
+  static final IconData xcircle = PhosphorIcons.xCircle();
+  static final IconData info = PhosphorIcons.info();
+  static final IconData qris = PhosphorIcons.qrCode();
+  static final IconData store = PhosphorIcons.storefront();
+  static final IconData link = PhosphorIcons.link();
+  static final IconData clock = PhosphorIcons.clock();
+  static final IconData refresh = PhosphorIcons.arrowClockwise();
+  static final IconData settings = PhosphorIcons.gear();
+  static final IconData logout = PhosphorIcons.signOut();
+  static final IconData star = PhosphorIcons.star();
+  static final IconData splitBill = PhosphorIcons.receipt();
+  static final IconData card = PhosphorIcons.creditCard();
+  static final IconData food = PhosphorIcons.forkKnife();
+  static final IconData smartphone = PhosphorIcons.deviceMobile();
+  static final IconData arrowDown = PhosphorIcons.arrowDown();
+  static final IconData lightning = PhosphorIcons.lightning();
+  static final IconData wifi = PhosphorIcons.wifiHigh();
+  static final IconData heart = PhosphorIcons.heart();
+  static final IconData linkOff = PhosphorIcons.linkBreak();
+  static final IconData shoppingBag = PhosphorIcons.shoppingBag();
+  static final IconData google = PhosphorIcons.googleLogo();
 }

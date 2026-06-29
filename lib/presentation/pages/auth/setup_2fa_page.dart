@@ -5,7 +5,7 @@ import '../../widgets/app_badge.dart';
 import '../../widgets/app_button.dart';
 import '../../widgets/feature_icon.dart';
 
-const _twoFaMethods = [
+final _twoFaMethods = [
   _TwoFaMethod(
     key: 'smtp',
     icon: DkgIcons.mail,
@@ -71,7 +71,7 @@ class _Setup2FAPageState extends State<Setup2FAPage> {
             Align(
               alignment: Alignment.topLeft,
               child: IconButton(
-                icon: const Icon(DkgIcons.arrowLeft, color: AppColors.ink),
+                icon: Icon(DkgIcons.arrowLeft, color: AppColors.ink),
                 onPressed: () => context.canPop() ? context.pop() : context.go('/akun'),
               ),
             ),
@@ -87,14 +87,14 @@ class _Setup2FAPageState extends State<Setup2FAPage> {
                       color: AppColors.primarySurface,
                       borderRadius: BorderRadius.circular(18),
                     ),
-                    child: const Center(
+                    child: Center(
                       child: Icon(DkgIcons.shieldCheck, size: 30, color: AppColors.primary),
                     ),
                   ),
                   const SizedBox(height: 18),
                   const Text('Amankan akunmu',
                       style: TextStyle(
-                        fontFamily: 'PlusJakartaSans',
+                        fontFamily: 'Inter',
                         fontSize: 25,
                         fontWeight: FontWeight.w800,
                         color: AppColors.ink,
@@ -104,7 +104,7 @@ class _Setup2FAPageState extends State<Setup2FAPage> {
                   const Text(
                     'Pilih metode verifikasi 2 langkah (2FA). Kamu bisa ganti kapan saja di Pengaturan.',
                     style: TextStyle(
-                      fontFamily: 'PlusJakartaSans',
+                      fontFamily: 'Inter',
                       fontSize: 14.5,
                       color: AppColors.slate500,
                       height: 1.5,
@@ -149,7 +149,7 @@ class _Setup2FAPageState extends State<Setup2FAPage> {
                                       child: Text(m.title,
                                           overflow: TextOverflow.ellipsis,
                                           style: const TextStyle(
-                                            fontFamily: 'PlusJakartaSans',
+                                            fontFamily: 'Inter',
                                             fontSize: 15.5,
                                             fontWeight: FontWeight.w700,
                                             color: AppColors.ink,
@@ -164,7 +164,7 @@ class _Setup2FAPageState extends State<Setup2FAPage> {
                                 const SizedBox(height: 3),
                                 Text(m.desc,
                                     style: const TextStyle(
-                                      fontFamily: 'PlusJakartaSans',
+                                      fontFamily: 'Inter',
                                       fontSize: 12.8,
                                       color: AppColors.slate500,
                                       height: 1.45,

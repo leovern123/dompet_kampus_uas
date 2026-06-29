@@ -47,7 +47,7 @@ class AppTabBar extends StatelessWidget {
                       shape: BoxShape.circle,
                       boxShadow: AppColors.shadowPrimary,
                     ),
-                    child: const Icon(DkgIcons.scan, color: Colors.white, size: 26),
+                    child: Icon(DkgIcons.scan, color: Colors.white, size: 26),
                   ),
                 ),
               ),
@@ -95,7 +95,7 @@ class _TabItem extends StatelessWidget {
             Text(
               label,
               style: TextStyle(
-                fontFamily: 'PlusJakartaSans',
+                fontFamily: 'Inter',
                 fontSize: 11,
                 fontWeight: isActive ? FontWeight.w700 : FontWeight.w500,
                 color: isActive ? AppColors.primary : AppColors.slate400,

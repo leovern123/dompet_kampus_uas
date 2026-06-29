@@ -125,7 +125,7 @@ class _LoginPageState extends State<LoginPage> {
               Align(
                 alignment: Alignment.topLeft,
                 child: IconButton(
-                  icon: const Icon(DkgIcons.arrowLeft, color: AppColors.ink),
+                  icon: Icon(DkgIcons.arrowLeft, color: AppColors.ink),
                   onPressed: () => context.go('/'),
                 ),
               ),
@@ -139,7 +139,7 @@ class _LoginPageState extends State<LoginPage> {
                       const SizedBox(height: 22),
                       const Text('Masuk',
                           style: TextStyle(
-                            fontFamily: 'PlusJakartaSans',
+                            fontFamily: 'Inter',
                             fontSize: 27,
                             fontWeight: FontWeight.w800,
                             color: AppColors.ink,
@@ -178,7 +178,7 @@ class _LoginPageState extends State<LoginPage> {
                                         SizedBox(width: 11),
                                         Text('Menghubungkan…',
                                             style: TextStyle(
-                                              fontFamily: 'PlusJakartaSans',
+                                              fontFamily: 'Inter',
                                               fontSize: 15.5,
                                               fontWeight: FontWeight.w700,
                                             )),
@@ -188,7 +188,7 @@ class _LoginPageState extends State<LoginPage> {
                                         SizedBox(width: 11),
                                         Text('Lanjut dengan Google',
                                             style: TextStyle(
-                                              fontFamily: 'PlusJakartaSans',
+                                              fontFamily: 'Inter',
                                               fontSize: 15.5,
                                               fontWeight: FontWeight.w700,
                                               color: AppColors.ink,
@@ -206,7 +206,7 @@ class _LoginPageState extends State<LoginPage> {
                           padding: const EdgeInsets.symmetric(horizontal: 12),
                           child: const Text('atau email',
                               style: TextStyle(
-                                fontFamily: 'PlusJakartaSans',
+                                fontFamily: 'Inter',
                                 fontSize: 12.5,
                                 fontWeight: FontWeight.w600,
                                 color: AppColors.slate400,
@@ -221,7 +221,7 @@ class _LoginPageState extends State<LoginPage> {
                         onChanged: (v) => setState(() => _email = v),
                         placeholder: 'nama@email.com',
                         keyboardType: TextInputType.emailAddress,
-                        prefixIcon: const Icon(DkgIcons.mail, size: 20),
+                        prefixIcon: Icon(DkgIcons.mail, size: 20),
                       ),
                       const SizedBox(height: 14),
                       AppField(
@@ -230,7 +230,7 @@ class _LoginPageState extends State<LoginPage> {
                         onChanged: (v) => setState(() => _pw = v),
                         obscureText: !_showPw,
                         placeholder: '••••••••',
-                        prefixIcon: const Icon(DkgIcons.lock, size: 20),
+                        prefixIcon: Icon(DkgIcons.lock, size: 20),
                         suffixIcon: IconButton(
                           icon: Icon(_showPw ? DkgIcons.eyeOff : DkgIcons.eye,
                               size: 20, color: AppColors.slate400),
@@ -243,7 +243,7 @@ class _LoginPageState extends State<LoginPage> {
                           onPressed: () {},
                           child: const Text('Lupa kata sandi?',
                               style: TextStyle(
-                                fontFamily: 'PlusJakartaSans',
+                                fontFamily: 'Inter',
                                 color: AppColors.primary,
                                 fontWeight: FontWeight.w700,
                                 fontSize: 13.5,
@@ -268,7 +268,7 @@ class _LoginPageState extends State<LoginPage> {
                             onTap: () => context.go('/register'),
                             child: const Text('Daftar',
                                 style: TextStyle(
-                                  fontFamily: 'PlusJakartaSans',
+                                  fontFamily: 'Inter',
                                   color: AppColors.primary,
                                   fontWeight: FontWeight.w700,
                                   fontSize: 14,
@@ -298,7 +298,7 @@ class _GoogleIcon extends StatelessWidget {
       child: Image.network(
         'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/24px-Google_%22G%22_logo.svg.png',
         errorBuilder: (_, __, ___) =>
-            const Icon(Icons.g_mobiledata_rounded, size: 24, color: Colors.red),
+            Icon(DkgIcons.google, size: 24, color: Colors.red),
       ),
     );
   }

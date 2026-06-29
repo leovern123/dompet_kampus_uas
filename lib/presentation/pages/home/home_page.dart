@@ -77,13 +77,13 @@ class _HomePageState extends State<HomePage> {
                                 children: [
                                   const Text('Selamat siang,',
                                       style: TextStyle(
-                                        fontFamily: 'PlusJakartaSans',
+                                        fontFamily: 'Inter',
                                         fontSize: 13,
                                         color: Colors.white70,
                                       )),
                                   Text('$firstName ',
                                       style: const TextStyle(
-                                        fontFamily: 'PlusJakartaSans',
+                                        fontFamily: 'Inter',
                                         fontSize: 17,
                                         fontWeight: FontWeight.w800,
                                         color: Colors.white,
@@ -101,7 +101,7 @@ class _HomePageState extends State<HomePage> {
                                     color: Colors.white.withValues(alpha: 0.18),
                                     borderRadius: BorderRadius.circular(14),
                                   ),
-                                  child: const Icon(Icons.notifications_outlined,
+                                  child: Icon(DkgIcons.bell,
                                       size: 21, color: Colors.white),
                                 ),
                                 Positioned(
@@ -164,10 +164,10 @@ class _HomePageState extends State<HomePage> {
 
   Widget _buildBalanceCard(double balance, bool loading) {
     final actions = [
-      {'icon': Icons.north_rounded, 'label': 'Top Up', 'tone': 'blue', 'route': '/topup'},
-      {'icon': Icons.send_rounded, 'label': 'Transfer', 'tone': 'green', 'route': '/transfer'},
-      {'icon': Icons.qr_code_rounded, 'label': 'Bayar', 'tone': 'violet', 'route': '/payment'},
-      {'icon': Icons.south_rounded, 'label': 'Tarik', 'tone': 'amber', 'route': '/topup'},
+      {'icon': DkgIcons.topup, 'label': 'Top Up', 'tone': 'blue', 'route': '/topup'},
+      {'icon': DkgIcons.send, 'label': 'Transfer', 'tone': 'green', 'route': '/transfer'},
+      {'icon': DkgIcons.qris, 'label': 'Bayar', 'tone': 'violet', 'route': '/payment'},
+      {'icon': DkgIcons.arrowDown, 'label': 'Tarik', 'tone': 'amber', 'route': '/topup'},
     ];
 
     return Container(
@@ -187,7 +187,7 @@ class _HomePageState extends State<HomePage> {
                   const SizedBox(width: 7),
                   const Text('Saldo DKG',
                       style: TextStyle(
-                        fontFamily: 'PlusJakartaSans',
+                        fontFamily: 'Inter',
                         fontSize: 13,
                         fontWeight: FontWeight.w700,
                         color: AppColors.slate500,
@@ -203,13 +203,13 @@ class _HomePageState extends State<HomePage> {
                     color: AppColors.primarySurface,
                     borderRadius: BorderRadius.circular(20),
                   ),
-                  child: const Row(
+                  child: Row(
                     children: [
-                      Icon(Icons.add_rounded, size: 15, color: AppColors.primary),
-                      SizedBox(width: 5),
-                      Text('Isi Saldo',
+                      Icon(DkgIcons.plus, size: 15, color: AppColors.primary),
+                      const SizedBox(width: 5),
+                      const Text('Isi Saldo',
                           style: TextStyle(
-                            fontFamily: 'PlusJakartaSans',
+                            fontFamily: 'Inter',
                             color: AppColors.primary,
                             fontWeight: FontWeight.w700,
                             fontSize: 13,
@@ -226,7 +226,7 @@ class _HomePageState extends State<HomePage> {
               Text(
                 _hideBalance ? CurrencyFormatter.maskBalance() : CurrencyFormatter.format(balance),
                 style: const TextStyle(
-                  fontFamily: 'PlusJakartaSans',
+                  fontFamily: 'Inter',
                   fontSize: 30,
                   fontWeight: FontWeight.w800,
                   color: AppColors.ink,
@@ -235,7 +235,7 @@ class _HomePageState extends State<HomePage> {
               ),
               const SizedBox(width: 10),
               IconButton(
-                icon: Icon(_hideBalance ? Icons.visibility_off_outlined : Icons.visibility_outlined,
+                icon: Icon(_hideBalance ? DkgIcons.eyeOff : DkgIcons.eye,
                     size: 20, color: AppColors.slate400),
                 onPressed: () => setState(() => _hideBalance = !_hideBalance),
                 padding: const EdgeInsets.all(4),
@@ -266,7 +266,7 @@ class _HomePageState extends State<HomePage> {
                           const SizedBox(height: 7),
                           Text(a['label'] as String,
                               style: const TextStyle(
-                                fontFamily: 'PlusJakartaSans',
+                                fontFamily: 'Inter',
                                 fontSize: 12,
                                 fontWeight: FontWeight.w700,
                                 color: AppColors.slate600,
@@ -297,21 +297,21 @@ class _HomePageState extends State<HomePage> {
             ),
             child: Row(
               children: [
-                const FeatureIcon(
-                    icon: Icons.star_outline_rounded, tone: 'amber', size: 38, iconSize: 19),
+                FeatureIcon(
+                    icon: DkgIcons.star, tone: 'amber', size: 38, iconSize: 19),
                 const SizedBox(width: 10),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: const [
                     Text('Poin Kampus',
                         style: TextStyle(
-                            fontFamily: 'PlusJakartaSans',
+                            fontFamily: 'Inter',
                             fontSize: 11.5,
                             color: AppColors.slate500,
                             fontWeight: FontWeight.w600)),
                     Text('1.250',
                         style: TextStyle(
-                            fontFamily: 'PlusJakartaSans',
+                            fontFamily: 'Inter',
                             fontSize: 15,
                             fontWeight: FontWeight.w800,
                             color: AppColors.ink)),
@@ -332,21 +332,21 @@ class _HomePageState extends State<HomePage> {
             ),
             child: Row(
               children: [
-                const FeatureIcon(
-                    icon: Icons.qr_code_rounded, tone: 'green', size: 38, iconSize: 19),
+                FeatureIcon(
+                    icon: DkgIcons.qris, tone: 'green', size: 38, iconSize: 19),
                 const SizedBox(width: 10),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: const [
                     Text('KTM Digital',
                         style: TextStyle(
-                            fontFamily: 'PlusJakartaSans',
+                            fontFamily: 'Inter',
                             fontSize: 11.5,
                             color: AppColors.slate500,
                             fontWeight: FontWeight.w600)),
                     Text('Aktif',
                         style: TextStyle(
-                            fontFamily: 'PlusJakartaSans',
+                            fontFamily: 'Inter',
                             fontSize: 15,
                             fontWeight: FontWeight.w800,
                             color: AppColors.ink)),
@@ -362,14 +362,14 @@ class _HomePageState extends State<HomePage> {
 
   Widget _buildFeatureGrid() {
     final features = [
-      {'icon': Icons.smartphone_outlined, 'label': 'Pulsa', 'tone': 'blue'},
-      {'icon': Icons.bolt_outlined, 'label': 'PLN', 'tone': 'amber'},
-      {'icon': Icons.restaurant_outlined, 'label': 'Kantin', 'tone': 'red'},
-      {'icon': Icons.receipt_long_outlined, 'label': 'UKT', 'tone': 'violet'},
-      {'icon': Icons.wifi_rounded, 'label': 'Paket Data', 'tone': 'green'},
-      {'icon': Icons.card_giftcard_rounded, 'label': 'Voucher', 'tone': 'red'},
-      {'icon': Icons.favorite_outline_rounded, 'label': 'Donasi', 'tone': 'amber'},
-      {'icon': Icons.more_horiz_rounded, 'label': 'Lainnya', 'tone': 'slate'},
+      {'icon': DkgIcons.smartphone, 'label': 'Pulsa', 'tone': 'blue'},
+      {'icon': DkgIcons.lightning, 'label': 'PLN', 'tone': 'amber'},
+      {'icon': DkgIcons.food, 'label': 'Kantin', 'tone': 'red'},
+      {'icon': DkgIcons.bill, 'label': 'UKT', 'tone': 'violet'},
+      {'icon': DkgIcons.wifi, 'label': 'Paket Data', 'tone': 'green'},
+      {'icon': DkgIcons.gift, 'label': 'Voucher', 'tone': 'red'},
+      {'icon': DkgIcons.heart, 'label': 'Donasi', 'tone': 'amber'},
+      {'icon': DkgIcons.more, 'label': 'Lainnya', 'tone': 'slate'},
     ];
     return Container(
       decoration: BoxDecoration(
@@ -395,7 +395,7 @@ class _HomePageState extends State<HomePage> {
                 const SizedBox(height: 8),
                 Text(f['label'] as String,
                     style: const TextStyle(
-                      fontFamily: 'PlusJakartaSans',
+                      fontFamily: 'Inter',
                       fontSize: 11.8,
                       fontWeight: FontWeight.w600,
                       color: AppColors.slate600,
@@ -445,7 +445,7 @@ class _HomePageState extends State<HomePage> {
                     color: Colors.white.withValues(alpha: 0.12),
                     borderRadius: BorderRadius.circular(14),
                   ),
-                  child: const Icon(Icons.link_rounded, size: 24, color: Color(0xFF5B9BFF)),
+                  child: Icon(DkgIcons.link, size: 24, color: Color(0xFF5B9BFF)),
                 ),
                 const SizedBox(width: 13),
                 const Expanded(
@@ -454,7 +454,7 @@ class _HomePageState extends State<HomePage> {
                     children: [
                       Text('Coba bayar dari toko online',
                           style: TextStyle(
-                            fontFamily: 'PlusJakartaSans',
+                            fontFamily: 'Inter',
                             fontSize: 14.5,
                             fontWeight: FontWeight.w700,
                             color: Colors.white,
@@ -462,14 +462,14 @@ class _HomePageState extends State<HomePage> {
                       SizedBox(height: 2),
                       Text('Simulasi checkout e-commerce → bayar via DKG',
                           style: TextStyle(
-                            fontFamily: 'PlusJakartaSans',
+                            fontFamily: 'Inter',
                             fontSize: 12.5,
                             color: Colors.white70,
                           )),
                     ],
                   ),
                 ),
-                const Icon(Icons.chevron_right_rounded, size: 20, color: Colors.white60),
+                Icon(DkgIcons.chevRight, size: 20, color: Colors.white60),
               ],
             ),
           ],
@@ -486,7 +486,7 @@ class _HomePageState extends State<HomePage> {
           children: [
             const Text('Transaksi terakhir',
                 style: TextStyle(
-                  fontFamily: 'PlusJakartaSans',
+                  fontFamily: 'Inter',
                   fontSize: 16,
                   fontWeight: FontWeight.w700,
                   color: AppColors.ink,
@@ -495,7 +495,7 @@ class _HomePageState extends State<HomePage> {
               onTap: () => context.go('/history'),
               child: const Text('Lihat semua',
                   style: TextStyle(
-                    fontFamily: 'PlusJakartaSans',
+                    fontFamily: 'Inter',
                     color: AppColors.primary,
                     fontWeight: FontWeight.w700,
                     fontSize: 13.5,
@@ -515,7 +515,7 @@ class _HomePageState extends State<HomePage> {
                   padding: EdgeInsets.all(20),
                   child: Center(
                     child: Text('Belum ada transaksi',
-                        style: TextStyle(color: AppColors.slate400, fontFamily: 'PlusJakartaSans')),
+                        style: TextStyle(color: AppColors.slate400, fontFamily: 'Inter')),
                   ),
                 )
               : Column(

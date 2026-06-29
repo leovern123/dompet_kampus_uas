@@ -79,7 +79,7 @@ class _TransferAmountPageState extends State<TransferAmountPage> {
                               child: Center(
                                 child: Text(widget.recipient['name'] as String,
                                     style: const TextStyle(
-                                      fontFamily: 'PlusJakartaSans',
+                                      fontFamily: 'Inter',
                                       fontWeight: FontWeight.w800,
                                       color: AppColors.primary,
                                       fontSize: 13,
@@ -97,7 +97,7 @@ class _TransferAmountPageState extends State<TransferAmountPage> {
                                   ? (widget.recipient['sub'] as String)
                                   : (widget.recipient['name'] as String),
                               style: const TextStyle(
-                                fontFamily: 'PlusJakartaSans',
+                                fontFamily: 'Inter',
                                 fontSize: 14.5,
                                 fontWeight: FontWeight.w700,
                                 color: AppColors.ink,
@@ -108,7 +108,7 @@ class _TransferAmountPageState extends State<TransferAmountPage> {
                           ],
                         ),
                       ),
-                      const Icon(Icons.verified_user_outlined, size: 20, color: AppColors.green),
+                      Icon(DkgIcons.shieldCheck, size: 20, color: AppColors.green),
                     ],
                   ),
                 ),
@@ -119,7 +119,7 @@ class _TransferAmountPageState extends State<TransferAmountPage> {
                   child: Column(
                     children: [
                       const Text('Nominal',
-                          style: TextStyle(fontFamily: 'PlusJakartaSans', fontSize: 13, color: AppColors.slate400, fontWeight: FontWeight.w600)),
+                          style: TextStyle(fontFamily: 'Inter', fontSize: 13, color: AppColors.slate400, fontWeight: FontWeight.w600)),
                       const SizedBox(height: 6),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -128,7 +128,7 @@ class _TransferAmountPageState extends State<TransferAmountPage> {
                         children: [
                           Text('Rp ',
                               style: TextStyle(
-                                fontFamily: 'PlusJakartaSans',
+                                fontFamily: 'Inter',
                                 fontSize: 22,
                                 fontWeight: FontWeight.w700,
                                 color: _amount > 0 ? AppColors.ink : AppColors.slate300,
@@ -136,7 +136,7 @@ class _TransferAmountPageState extends State<TransferAmountPage> {
                           Text(
                             _amount > 0 ? _amount.toLocaleString() : '0',
                             style: TextStyle(
-                              fontFamily: 'PlusJakartaSans',
+                              fontFamily: 'Inter',
                               fontSize: 42,
                               fontWeight: FontWeight.w800,
                               color: _amount > 0 ? AppColors.ink : AppColors.slate300,
@@ -149,7 +149,7 @@ class _TransferAmountPageState extends State<TransferAmountPage> {
                       Text(
                         enough ? 'Saldo: ${CurrencyFormatter.format(balance)}' : 'Saldo tidak cukup',
                         style: TextStyle(
-                          fontFamily: 'PlusJakartaSans',
+                          fontFamily: 'Inter',
                           fontSize: 12.5,
                           fontWeight: FontWeight.w600,
                           color: enough ? AppColors.slate400 : AppColors.red,
@@ -169,7 +169,7 @@ class _TransferAmountPageState extends State<TransferAmountPage> {
                             ),
                             child: Text(CurrencyFormatter.formatInt(c),
                                 style: const TextStyle(
-                                  fontFamily: 'PlusJakartaSans',
+                                  fontFamily: 'Inter',
                                   fontSize: 13,
                                   fontWeight: FontWeight.w700,
                                   color: AppColors.slate600,
@@ -184,7 +184,7 @@ class _TransferAmountPageState extends State<TransferAmountPage> {
                   value: _note,
                   onChanged: (v) => setState(() => _note = v),
                   placeholder: 'Tambah catatan (opsional)',
-                  prefixIcon: const Icon(Icons.receipt_outlined, size: 20),
+                  prefixIcon: Icon(DkgIcons.bill, size: 20),
                 ),
               ],
             ),

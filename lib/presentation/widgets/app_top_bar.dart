@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../core/theme/app_colors.dart';
+import 'feature_icon.dart';
 
 class AppTopBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
@@ -19,14 +20,14 @@ class AppTopBar extends StatelessWidget implements PreferredSizeWidget {
       scrolledUnderElevation: 0,
       leading: onBack != null
           ? IconButton(
-              icon: const Icon(Icons.arrow_back_ios_new_rounded, size: 20, color: AppColors.ink),
+              icon: Icon(DkgIcons.arrowLeft, size: 20, color: AppColors.ink),
               onPressed: onBack,
             )
           : null,
       title: Text(
         title,
         style: const TextStyle(
-          fontFamily: 'PlusJakartaSans',
+          fontFamily: 'Inter',
           fontSize: 17,
           fontWeight: FontWeight.w700,
           color: AppColors.ink,

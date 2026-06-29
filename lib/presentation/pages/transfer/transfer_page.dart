@@ -59,7 +59,7 @@ class _TransferPageState extends State<TransferPage> {
                           child: Center(
                             child: Text(t[1],
                                 style: TextStyle(
-                                  fontFamily: 'PlusJakartaSans',
+                                  fontFamily: 'Inter',
                                   fontSize: 14,
                                   fontWeight: FontWeight.w700,
                                   color: active ? Colors.white : AppColors.slate500,
@@ -76,10 +76,10 @@ class _TransferPageState extends State<TransferPage> {
                   onChanged: (v) => setState(() => _q = v),
                   placeholder: _tab == 'dkg' ? 'Cari nama atau masukkan email' : 'Cari bank',
                   keyboardType: _tab == 'dkg' ? TextInputType.emailAddress : TextInputType.text,
-                  prefixIcon: const Icon(Icons.search_rounded, size: 20),
+                  prefixIcon: Icon(DkgIcons.search, size: 20),
                   suffixIcon: _tab == 'dkg' && _q.contains('@')
                       ? IconButton(
-                          icon: const Icon(Icons.send_rounded, size: 20, color: AppColors.primary),
+                          icon: Icon(DkgIcons.send, size: 20, color: AppColors.primary),
                           onPressed: () => context.go('/transfer/amount', extra: {
                             'recipient': {'name': _q, 'sub': _q},
                             'channel': 'dkg',
@@ -113,7 +113,7 @@ class _TransferPageState extends State<TransferPage> {
         const Padding(
           padding: EdgeInsets.only(left: 4, top: 10, bottom: 8),
           child: Text('Kontak favorit',
-              style: TextStyle(fontFamily: 'PlusJakartaSans', fontSize: 13, fontWeight: FontWeight.w700, color: AppColors.slate400)),
+              style: TextStyle(fontFamily: 'Inter', fontSize: 13, fontWeight: FontWeight.w700, color: AppColors.slate400)),
         ),
         Container(
           decoration: BoxDecoration(
@@ -145,7 +145,7 @@ class _TransferPageState extends State<TransferPage> {
                               children: [
                                 Text(c['name'] as String,
                                     style: const TextStyle(
-                                      fontFamily: 'PlusJakartaSans',
+                                      fontFamily: 'Inter',
                                       fontSize: 14.5,
                                       fontWeight: FontWeight.w700,
                                       color: AppColors.ink,
@@ -156,7 +156,7 @@ class _TransferPageState extends State<TransferPage> {
                             ),
                           ),
                           if (c['fav'] as bool)
-                            const Icon(Icons.star_rounded, size: 18, color: AppColors.amber),
+                            Icon(DkgIcons.star, size: 18, color: AppColors.amber),
                         ],
                       ),
                     ),
@@ -208,7 +208,7 @@ class _TransferPageState extends State<TransferPage> {
                         child: Center(
                           child: Text(b['name'] as String,
                               style: const TextStyle(
-                                fontFamily: 'PlusJakartaSans',
+                                fontFamily: 'Inter',
                                 fontWeight: FontWeight.w800,
                                 color: AppColors.primary,
                                 fontSize: 14,
@@ -222,7 +222,7 @@ class _TransferPageState extends State<TransferPage> {
                           children: [
                             Text(b['sub'] as String,
                                 style: const TextStyle(
-                                  fontFamily: 'PlusJakartaSans',
+                                  fontFamily: 'Inter',
                                   fontSize: 14.5,
                                   fontWeight: FontWeight.w700,
                                   color: AppColors.ink,
@@ -232,7 +232,7 @@ class _TransferPageState extends State<TransferPage> {
                           ],
                         ),
                       ),
-                      const Icon(Icons.chevron_right_rounded, size: 18, color: AppColors.slate400),
+                      Icon(DkgIcons.chevRight, size: 18, color: AppColors.slate400),
                     ],
                   ),
                 ),

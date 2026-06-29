@@ -116,7 +116,7 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
             Align(
               alignment: Alignment.topLeft,
               child: IconButton(
-                icon: const Icon(DkgIcons.arrowLeft, color: AppColors.ink),
+                icon: Icon(DkgIcons.arrowLeft, color: AppColors.ink),
                 onPressed: () => context.go('/register'),
               ),
             ),
@@ -135,7 +135,7 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
                             color: AppColors.primarySurface,
                             borderRadius: BorderRadius.circular(24),
                           ),
-                          child: const Center(
+                          child: Center(
                             child: Icon(DkgIcons.mail, size: 36, color: AppColors.primary),
                           ),
                         ),
@@ -150,7 +150,7 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
                               shape: BoxShape.circle,
                               border: Border.all(color: Colors.white, width: 3),
                             ),
-                            child: const Icon(DkgIcons.check, size: 13, color: Colors.white),
+                            child: Icon(DkgIcons.check, size: 13, color: Colors.white),
                           ),
                         ),
                       ],
@@ -159,7 +159,7 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
                     const Text(
                       'Verifikasi email',
                       style: TextStyle(
-                        fontFamily: 'PlusJakartaSans',
+                        fontFamily: 'Inter',
                         fontSize: 23,
                         fontWeight: FontWeight.w800,
                         color: AppColors.ink,
@@ -171,7 +171,7 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
                       TextSpan(
                         text: 'Kami kirim kode 6 digit ke\n',
                         style: const TextStyle(
-                          fontFamily: 'PlusJakartaSans',
+                          fontFamily: 'Inter',
                           fontSize: 14.5,
                           color: AppColors.slate500,
                           height: 1.55,
@@ -215,7 +215,7 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
                       Text(
                         _errorMessage!,
                         style: const TextStyle(
-                          fontFamily: 'PlusJakartaSans',
+                          fontFamily: 'Inter',
                           color: AppColors.red,
                           fontSize: 13,
                           fontWeight: FontWeight.w600,
@@ -227,18 +227,18 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
                         ? Text(
                             'Kirim ulang kode dalam 00:${_timer.toString().padLeft(2, '0')}',
                             style: const TextStyle(
-                              fontFamily: 'PlusJakartaSans',
+                              fontFamily: 'Inter',
                               fontSize: 13.5,
                               color: AppColors.slate400,
                             ),
                           )
                         : TextButton.icon(
                             onPressed: _resend,
-                            icon: const Icon(DkgIcons.refresh, size: 16, color: AppColors.primary),
+                            icon: Icon(DkgIcons.refresh, size: 16, color: AppColors.primary),
                             label: const Text(
                               'Kirim ulang kode',
                               style: TextStyle(
-                                fontFamily: 'PlusJakartaSans',
+                                fontFamily: 'Inter',
                                 color: AppColors.primary,
                                 fontWeight: FontWeight.w700,
                                 fontSize: 14,

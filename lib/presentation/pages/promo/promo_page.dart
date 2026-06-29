@@ -9,10 +9,10 @@ class PromoPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final promos = [
-      {'t': 'Cashback 30% di Kantin Kampus', 'd': 'Maks. Rp10.000 · s.d. 30 Jun', 'tone': 'red', 'icon': Icons.restaurant_outlined},
-      {'t': 'Gratis biaya transfer antarbank', 'd': 'Setiap Jumat · semua bank', 'tone': 'green', 'icon': Icons.send_rounded},
-      {'t': 'Diskon UKT 0% cicilan 6 bulan', 'd': 'Khusus pengguna baru', 'tone': 'violet', 'icon': Icons.receipt_long_outlined},
-      {'t': 'Bonus 5.000 poin top up pertama', 'd': 'Min. Rp50.000', 'tone': 'amber', 'icon': Icons.star_outline_rounded},
+      {'t': 'Cashback 30% di Kantin Kampus', 'd': 'Maks. Rp10.000 · s.d. 30 Jun', 'tone': 'red', 'icon': DkgIcons.food},
+      {'t': 'Gratis biaya transfer antarbank', 'd': 'Setiap Jumat · semua bank', 'tone': 'green', 'icon': DkgIcons.send},
+      {'t': 'Diskon UKT 0% cicilan 6 bulan', 'd': 'Khusus pengguna baru', 'tone': 'violet', 'icon': DkgIcons.bill},
+      {'t': 'Bonus 5.000 poin top up pertama', 'd': 'Min. Rp50.000', 'tone': 'amber', 'icon': DkgIcons.star},
     ];
 
     return Scaffold(
@@ -27,7 +27,7 @@ class PromoPage extends StatelessWidget {
               children: const [
                 Text('Promo & Reward',
                     style: TextStyle(
-                      fontFamily: 'PlusJakartaSans',
+                      fontFamily: 'Inter',
                       fontSize: 22,
                       fontWeight: FontWeight.w800,
                       color: AppColors.ink,
@@ -70,7 +70,7 @@ class PromoPage extends StatelessWidget {
                           SizedBox(height: 12),
                           Text('Bayar kuliah,\ndapat cashback 💸',
                               style: TextStyle(
-                                fontFamily: 'PlusJakartaSans',
+                                fontFamily: 'Inter',
                                 fontSize: 22,
                                 fontWeight: FontWeight.w800,
                                 color: Colors.white,
@@ -79,7 +79,7 @@ class PromoPage extends StatelessWidget {
                           SizedBox(height: 8),
                           Text('Kumpulkan poin tiap transaksi.',
                               style: TextStyle(
-                                fontFamily: 'PlusJakartaSans',
+                                fontFamily: 'Inter',
                                 fontSize: 13.5,
                                 color: Colors.white70,
                               )),
@@ -107,7 +107,7 @@ class PromoPage extends StatelessWidget {
                               children: [
                                 Text(p['t'] as String,
                                     style: const TextStyle(
-                                      fontFamily: 'PlusJakartaSans',
+                                      fontFamily: 'Inter',
                                       fontSize: 14.5,
                                       fontWeight: FontWeight.w700,
                                       color: AppColors.ink,
@@ -116,7 +116,7 @@ class PromoPage extends StatelessWidget {
                                 const SizedBox(height: 3),
                                 Text(p['d'] as String,
                                     style: const TextStyle(
-                                      fontFamily: 'PlusJakartaSans',
+                                      fontFamily: 'Inter',
                                       fontSize: 12.5,
                                       color: AppColors.slate400,
                                     )),

@@ -82,7 +82,7 @@ class _RegisterPageState extends State<RegisterPage> {
             Align(
               alignment: Alignment.topLeft,
               child: IconButton(
-                icon: const Icon(DkgIcons.arrowLeft, color: AppColors.ink),
+                icon: Icon(DkgIcons.arrowLeft, color: AppColors.ink),
                 onPressed: () => context.go('/'),
               ),
             ),
@@ -94,7 +94,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   children: [
                     const Text('Buat akun',
                         style: TextStyle(
-                          fontFamily: 'PlusJakartaSans',
+                          fontFamily: 'Inter',
                           fontSize: 27,
                           fontWeight: FontWeight.w800,
                           color: AppColors.ink,
@@ -110,7 +110,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       value: _name,
                       onChanged: (v) => setState(() => _name = v),
                       placeholder: 'Nama Lengkap',
-                      prefixIcon: const Icon(DkgIcons.user, size: 20),
+                      prefixIcon: Icon(DkgIcons.user, size: 20),
                     ),
                     const SizedBox(height: 14),
                     AppField(
@@ -119,7 +119,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       onChanged: (v) => setState(() => _email = v),
                       placeholder: 'nama@email.com',
                       keyboardType: TextInputType.emailAddress,
-                      prefixIcon: const Icon(DkgIcons.mail, size: 20),
+                      prefixIcon: Icon(DkgIcons.mail, size: 20),
                     ),
                     const SizedBox(height: 14),
                     AppField(
@@ -128,7 +128,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       onChanged: (v) => setState(() => _pw = v),
                       obscureText: !_showPw,
                       placeholder: 'Min. 6 karakter',
-                      prefixIcon: const Icon(DkgIcons.lock, size: 20),
+                      prefixIcon: Icon(DkgIcons.lock, size: 20),
                       suffixIcon: IconButton(
                         icon: Icon(_showPw ? DkgIcons.eyeOff : DkgIcons.eye,
                             size: 20, color: AppColors.slate400),
@@ -154,7 +154,7 @@ class _RegisterPageState extends State<RegisterPage> {
                               ),
                             ),
                             child: _agree
-                                ? const Icon(DkgIcons.check, size: 14, color: Colors.white)
+                                ? Icon(DkgIcons.check, size: 14, color: Colors.white)
                                 : null,
                           ),
                           const SizedBox(width: 10),
@@ -162,7 +162,7 @@ class _RegisterPageState extends State<RegisterPage> {
                             child: RichText(
                               text: const TextSpan(
                                 style: TextStyle(
-                                  fontFamily: 'PlusJakartaSans',
+                                  fontFamily: 'Inter',
                                   fontSize: 13,
                                   color: AppColors.slate500,
                                   height: 1.5,
@@ -202,7 +202,7 @@ class _RegisterPageState extends State<RegisterPage> {
                           onTap: () => context.go('/login'),
                           child: const Text('Masuk',
                               style: TextStyle(
-                                fontFamily: 'PlusJakartaSans',
+                                fontFamily: 'Inter',
                                 color: AppColors.primary,
                                 fontWeight: FontWeight.w700,
                                 fontSize: 14,

@@ -52,7 +52,7 @@ class _SuccessPageState extends State<SuccessPage> {
                     Text(widget.title,
                         textAlign: TextAlign.center,
                         style: const TextStyle(
-                          fontFamily: 'PlusJakartaSans',
+                          fontFamily: 'Inter',
                           fontSize: 24,
                           fontWeight: FontWeight.w800,
                           color: AppColors.ink,
@@ -63,7 +63,7 @@ class _SuccessPageState extends State<SuccessPage> {
                       Text(widget.subtitle,
                           textAlign: TextAlign.center,
                           style: const TextStyle(
-                            fontFamily: 'PlusJakartaSans',
+                            fontFamily: 'Inter',
                             fontSize: 14.5,
                             color: AppColors.slate500,
                           )),
@@ -71,7 +71,7 @@ class _SuccessPageState extends State<SuccessPage> {
                     const SizedBox(height: 20),
                     Text(CurrencyFormatter.format(widget.amount),
                         style: const TextStyle(
-                          fontFamily: 'PlusJakartaSans',
+                          fontFamily: 'Inter',
                           fontSize: 36,
                           fontWeight: FontWeight.w800,
                           color: AppColors.ink,
@@ -100,14 +100,14 @@ class _SuccessPageState extends State<SuccessPage> {
                                     children: [
                                       Text(l[0],
                                           style: const TextStyle(
-                                            fontFamily: 'PlusJakartaSans',
+                                            fontFamily: 'Inter',
                                             fontSize: 13.5,
                                             color: AppColors.slate500,
                                           )),
                                       Text(l[1],
                                           textAlign: TextAlign.right,
                                           style: const TextStyle(
-                                            fontFamily: 'PlusJakartaSans',
+                                            fontFamily: 'Inter',
                                             fontSize: 13.5,
                                             fontWeight: FontWeight.w700,
                                             color: AppColors.ink,
@@ -138,7 +138,7 @@ class _SuccessPageState extends State<SuccessPage> {
                   AppButton(
                     label: 'Bagikan bukti transaksi',
                     variant: AppButtonVariant.soft,
-                    icon: const Icon(Icons.copy_rounded, size: 18, color: AppColors.primary),
+                    icon: Icon(DkgIcons.copy, size: 18, color: AppColors.primary),
                     onPressed: () {},
                   ),
                 ],

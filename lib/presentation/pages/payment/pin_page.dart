@@ -258,7 +258,7 @@ class _PinPageState extends State<PinPage> {
               Align(
                 alignment: Alignment.topLeft,
                 child: IconButton(
-                  icon: const Icon(Icons.close_rounded, color: AppColors.ink),
+                  icon: Icon(DkgIcons.close, color: AppColors.ink),
                   onPressed: () {
                     if (_step == _Step.otp && !_busy) {
                       _countdown?.cancel();
@@ -290,7 +290,7 @@ class _PinPageState extends State<PinPage> {
                       SizedBox(height: 18),
                       Text('Memproses transaksi…',
                           style: TextStyle(
-                            fontFamily: 'PlusJakartaSans',
+                            fontFamily: 'Inter',
                             fontSize: 15,
                             fontWeight: FontWeight.w700,
                             color: AppColors.slate600,
@@ -322,12 +322,12 @@ class _PinPageState extends State<PinPage> {
               color: AppColors.primarySurface,
               borderRadius: BorderRadius.circular(16),
             ),
-            child: const Center(child: Icon(Icons.lock_outline_rounded, size: 26, color: AppColors.primary)),
+            child: Center(child: Icon(DkgIcons.lock, size: 26, color: AppColors.primary)),
           ),
           const SizedBox(height: 16),
           const Text('Masukkan PIN',
               style: TextStyle(
-                fontFamily: 'PlusJakartaSans',
+                fontFamily: 'Inter',
                 fontSize: 21,
                 fontWeight: FontWeight.w800,
                 color: AppColors.ink,
@@ -345,7 +345,7 @@ class _PinPageState extends State<PinPage> {
           const SizedBox(height: 18),
           const Text.rich(TextSpan(
             text: 'Lupa PIN? ',
-            style: TextStyle(fontFamily: 'PlusJakartaSans', fontSize: 12.5, color: AppColors.slate400),
+            style: TextStyle(fontFamily: 'Inter', fontSize: 12.5, color: AppColors.slate400),
             children: [
               TextSpan(
                 text: 'Reset',
@@ -369,7 +369,7 @@ class _PinPageState extends State<PinPage> {
           const SizedBox(height: 18),
           Text(header.title,
               style: const TextStyle(
-                fontFamily: 'PlusJakartaSans',
+                fontFamily: 'Inter',
                 fontSize: 23,
                 fontWeight: FontWeight.w800,
                 color: AppColors.ink,
@@ -389,7 +389,7 @@ class _PinPageState extends State<PinPage> {
             const SizedBox(height: 12),
             const Text('Kode OTP salah, silakan coba lagi',
                 style: TextStyle(
-                  fontFamily: 'PlusJakartaSans',
+                  fontFamily: 'Inter',
                   color: AppColors.red,
                   fontSize: 13,
                   fontWeight: FontWeight.w600,
@@ -404,13 +404,13 @@ class _PinPageState extends State<PinPage> {
             ),
             child: Row(
               children: [
-                const Icon(DkgIcons.shieldCheck, size: 18, color: AppColors.primary),
+                Icon(DkgIcons.shieldCheck, size: 18, color: AppColors.primary),
                 const SizedBox(width: 8),
                 Expanded(
                   child: Text(
                     'Total pembayaran ${CurrencyFormatter.format((widget.flowData['amount'] as num).toDouble())}',
                     style: const TextStyle(
-                      fontFamily: 'PlusJakartaSans',
+                      fontFamily: 'Inter',
                       fontSize: 12.5,
                       color: AppColors.primary,
                       fontWeight: FontWeight.w600,
@@ -430,10 +430,10 @@ class _PinPageState extends State<PinPage> {
                   )
                 : TextButton.icon(
                     onPressed: _resendOtp,
-                    icon: const Icon(DkgIcons.refresh, size: 16, color: AppColors.primary),
+                    icon: Icon(DkgIcons.refresh, size: 16, color: AppColors.primary),
                     label: const Text('Kirim ulang kode',
                         style: TextStyle(
-                          fontFamily: 'PlusJakartaSans',
+                          fontFamily: 'Inter',
                           color: AppColors.primary,
                           fontWeight: FontWeight.w700,
                           fontSize: 14,
@@ -456,7 +456,7 @@ class _PinPageState extends State<PinPage> {
         );
       case AppConstants.twoFaNotif:
         return (
-          icon: Icons.notifications_outlined,
+          icon: DkgIcons.bell,
           tone: 'green',
           title: 'Masukkan Kode OTP',
           subtitle: 'Kami mengirim kode verifikasi ke notifikasi perangkat kamu.',

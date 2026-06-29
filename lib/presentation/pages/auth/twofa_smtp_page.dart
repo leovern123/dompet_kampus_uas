@@ -82,7 +82,7 @@ class _TwoFASmtpPageState extends State<TwoFASmtpPage> {
               Align(
                 alignment: Alignment.topLeft,
                 child: IconButton(
-                  icon: const Icon(DkgIcons.arrowLeft, color: AppColors.ink),
+                  icon: Icon(DkgIcons.arrowLeft, color: AppColors.ink),
                   onPressed: () => context.go(widget.mode == 'setup' ? '/setup-2fa' : '/login'),
                 ),
               ),
@@ -91,11 +91,11 @@ class _TwoFASmtpPageState extends State<TwoFASmtpPage> {
                   padding: const EdgeInsets.fromLTRB(28, 8, 28, 24),
                   child: Column(
                     children: [
-                      const FeatureIcon(icon: DkgIcons.mail, tone: 'blue', size: 74, iconSize: 36),
+                      FeatureIcon(icon: DkgIcons.mail, tone: 'blue', size: 74, iconSize: 36),
                       const SizedBox(height: 18),
                       const Text('Masukkan Email OTP',
                           style: TextStyle(
-                            fontFamily: 'PlusJakartaSans',
+                            fontFamily: 'Inter',
                             fontSize: 23,
                             fontWeight: FontWeight.w800,
                             color: AppColors.ink,
@@ -115,7 +115,7 @@ class _TwoFASmtpPageState extends State<TwoFASmtpPage> {
                         const SizedBox(height: 12),
                         const Text('Kode salah',
                             style: TextStyle(
-                              fontFamily: 'PlusJakartaSans',
+                              fontFamily: 'Inter',
                               color: AppColors.red,
                               fontSize: 13,
                               fontWeight: FontWeight.w600,
@@ -130,12 +130,12 @@ class _TwoFASmtpPageState extends State<TwoFASmtpPage> {
                         ),
                         child: Row(
                           mainAxisSize: MainAxisSize.min,
-                          children: const [
+                          children: [
                             Icon(DkgIcons.info, size: 16, color: Color(0xFFB5760B)),
                             SizedBox(width: 8),
                             Text('Cek email inbox atau spam kamu',
                                 style: TextStyle(
-                                  fontFamily: 'PlusJakartaSans',
+                                  fontFamily: 'Inter',
                                   fontSize: 12.5,
                                   color: Color(0xFF8A5A06),
                                   fontWeight: FontWeight.w600,
@@ -154,10 +154,10 @@ class _TwoFASmtpPageState extends State<TwoFASmtpPage> {
                                 context.read<OtpBloc>().add(OtpSendEmail());
                                 _startTimer();
                               },
-                              icon: const Icon(DkgIcons.refresh, size: 16, color: AppColors.primary),
+                              icon: Icon(DkgIcons.refresh, size: 16, color: AppColors.primary),
                               label: const Text('Kirim ulang kode',
                                   style: TextStyle(
-                                    fontFamily: 'PlusJakartaSans',
+                                    fontFamily: 'Inter',
                                     color: AppColors.primary,
                                     fontWeight: FontWeight.w700,
                                     fontSize: 14,
