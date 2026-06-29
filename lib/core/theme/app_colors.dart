@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
-  // Primary — Ocean Blue
-  static const Color primary = Color(0xFF2D7FF9);
-  static const Color primaryLight = Color(0xFF5B9FFF);
-  static const Color primaryDark = Color(0xFF1A5FCC);
-  static const Color primarySurface = Color(0xFFE8F0FE);
-  static const Color primaryBorder = Color(0xFFB8D4FC);
+  // Primary — Indigo
+  static const Color primary = Color(0xFF6366F1);
+  static const Color primaryLight = Color(0xFF818CF8);
+  static const Color primaryDark = Color(0xFF4F46E5);
+  static const Color primarySurface = Color(0xFFEEF2FF);
+  static const Color primaryBorder = Color(0xFFC7D2FE);
 
-  // Deep Navy (for headers, gradients)
-  static const Color navy = Color(0xFF0F2A4A);
-  static const Color navyLight = Color(0xFF1B3A5C);
+  // Deep Indigo (for headers, gradients)
+  static const Color navy = Color(0xFF312E81);
+  static const Color navyLight = Color(0xFF3730A3);
 
   // Semantic
   static const Color green = Color(0xFF10B981);
@@ -37,15 +37,15 @@ class AppColors {
   static const LinearGradient primaryGradient = LinearGradient(
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
-    stops: [0.0, 0.55, 1.0],
-    colors: [Color(0xFF1B6DF5), primary, Color(0xFF0A4FBF)],
+    stops: [0.0, 0.5, 1.0],
+    colors: [Color(0xFF4F46E5), Color(0xFF6366F1), Color(0xFF7C3AED)],
   );
 
   static const LinearGradient navyGradient = LinearGradient(
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
     stops: [0.0, 1.0],
-    colors: [Color(0xFF0F2A4A), Color(0xFF1A3D6B)],
+    colors: [Color(0xFF312E81), Color(0xFF3730A3)],
   );
 
   // Shadows
@@ -67,10 +67,10 @@ class AppColors {
   ];
   static List<BoxShadow> shadowPrimary = [
     BoxShadow(
-      color: Color(0x402D7FF9),
-      blurRadius: 22,
+      color: Color(0x506366F1),
+      blurRadius: 28,
       spreadRadius: 0,
-      offset: Offset(0, 10),
+      offset: Offset(0, 12),
     ),
   ];
 

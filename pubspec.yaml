@@ -71,6 +71,7 @@ dependencies:
   # Theming & Fonts
   google_fonts: ^6.2.1
   phosphor_flutter: ^2.1.0
+  hugeicons: ^0.0.7
 
 dev_dependencies:
   flutter_test:
