@@ -68,6 +68,10 @@ dependencies:
   intl: ^0.19.0
   url_launcher: ^6.3.1
 
+  # Theming & Fonts
+  google_fonts: ^6.2.1
+  phosphor_flutter: ^2.1.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
